@@ -4,7 +4,6 @@ title: Developer Guidelines
 permalink: /contributing/
 ---
 
-# Developer Guidelines
 
 If you have a new plugin or handler, send a pull request! Don't be afraid on pushing your PR with non-ruby code. Just let someone from [team](https://github.com/sensu?tab=members) know. Maybe we can help you to rewrite your check to Ruby or even invent something completely new to test your work. Just don't hesitate to contact us.
 
