@@ -12,15 +12,15 @@ In the future, some sort of browsing/metadata/installation system may be impleme
 
 ## Production usage
 
-Linters currently run against Ruby 2.0 and 2.1 and RSpec3 tests are being written to support 1.9.3, 2.0, and 2.1.  There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu.  
+Linters currently run against Ruby 2.0 and 2.1 and RSpec3 tests are being run against 1.9.3, 2.0, and 2.1.  There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu.  
 
-Gems will be built against specific versions of Ruby and one EOL Ruby, currently 1.9.3, will be actively supported.
+Gems will be built against all current versions of Ruby and one EOL Ruby, currently 1.9.3, will be actively supported.
 Because of the nature of these repositories:
 
   * little test coverage
   * specific and exotic software being checked
   * no versioning system for plugins
 
-at this time is not recommended that you use master for your production instances.  Better pick something which works for you and lock it via `:ref` in your `chef || puppet || ansible || bash script` you name it.
+at this time is not recommended that you use master for your production instances.  Better pick something which works for you and lock it via `:ref` in your chef || puppet || ansible || bash script you name it.
 
 If you have installed Sensu using the omnibus package it will use an embedded version of ruby, but the ruby plugins here will use the system one. If you want to use the embedded ruby, which has the `sensu-plugin` gem installed as well, you can set `EMBEDDED_RUBY=true` in `/etc/default/sensu` and restart the Sensu services. This will put the embedded ruby first in the $PATH for commands run by the Sensu services.

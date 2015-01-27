@@ -12,12 +12,10 @@ sensu_twitter_username: sensuapp
 sensu_plugin_org:  sensu-plugins
 sensu_app_org: sensu
 
-exclude: ["vendor"]
-#exclude: [vendor]
-# Build settings
-markdown:    kramdown
-#highlighter: rouge
 
+# Build settings
+exclude: ["vendor"]
+markdown:    kramdown
 kramdown:
   auto_ids:       true
   footnote_nr:    1

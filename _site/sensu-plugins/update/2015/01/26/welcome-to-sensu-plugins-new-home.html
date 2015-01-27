@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About Us</title>
-  <meta name="description" content="The home for all Sensu Official and Community plugins, handlers, extensions and mutators.
-">
+  <title>Welcome to new Sensu Plugins!</title>
+  <meta name="description" content="Welcome to the new Sensu Plugins website and repos!">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://sensu-plugins.github.io/about/">
+  <link rel="canonical" href="http://sensu-plugins.github.io/sensu-plugins/update/2015/01/26/welcome-to-sensu-plugins-new-home.html">
   <link rel="alternate" type="application/rss+xml" title="Sensu Plugins" href="http://sensu-plugins.github.io/feed.xml" />
 </head>
 
@@ -62,44 +61,40 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About Us</h1>
+    <h1 class="post-title">Welcome to new Sensu Plugins!</h1>
+    <p class="post-meta">Jan 26, 2015</p>
   </header>
 
   <article class="post-content">
-    <h2 id="community-plugins-extensions-and-handlers">Community plugins, extensions, and handlers</h2>
+    <p>Welcome to the new Sensu Plugins website and repos!</p>
 
-<p>This project contains  example plugins and handlers for Sensu. Most of them are implemented in Ruby and use the <code>sensu-plugin</code> framework (a small gem); some also depend on additional gems (e.g. <code>mysql</code>). Some are shell scripts! All languages are welcome.</p>
+<p>There are a lot changes dropping in the next few months and all of them should greatly benefit the community.  A few of the changes have already been made, this site being a major one.  The <a href="http://sensu-plugins.github.io/contributing/">Developer Guidelines</a> have been updated to reflect some of the new features dropping over the next several months and the new policies that these bring.</p>
 
-<p>In the future, some sort of browsing/metadata/installation system may be implemented. For now, just clone the various repositories, take a look around, and copy the plugins you want to use.</p>
+<p>Before we get too deep into things let me assure you that there will be no forced upgrades, changes in license/functionality, or anything else to harm our precious, held-together-with-duct-tape-and-<strike>perl</strike>ruby, monitors.  Sensu plugins was always designed to be an integral part of an open framework and that will not change.  What is going to change is the manner in which the plugins are written, test, built, and delivered.</p>
 
-<h2 id="production-usage">Production usage</h2>
+<p>This has always been a community project built upon the hardwork and input of many people, sometimes though people don’t realize they can or should contribute.  This <a href="http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/27/sensu-plugins-roadmap.html">post</a> is a great example of how things will be done from now on.</p>
 
-<p>Linters currently run against Ruby 2.0 and 2.1 and RSpec3 tests are being run against 1.9.3, 2.0, and 2.1.  There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu.  </p>
+<h3 id="sensu-plugins-blog">Sensu Plugins Blog</h3>
 
-<p>Gems will be built against all current versions of Ruby and one EOL Ruby, currently 1.9.3, will be actively supported.<br />
-Because of the nature of these repositories:</p>
+<p>Whenever major changes are coming or hot issues, bugs, etc present themselves we can now create a simple blog post that gives an overview of the topic with a direct link back to the original post.  This post will be much more accesible then an Issue or a Pull Request buried among two dozen plus repos.  The RSS feed, for those that want to utilize it, will be ideal for keeping up with community developments and codebase changes.</p>
 
-<ul>
-  <li>little test coverage</li>
-  <li>specific and exotic software being checked</li>
-  <li>no versioning system for plugins</li>
-</ul>
+<h3 id="new-repositories">New Repositories</h3>
 
-<table>
-  <tbody>
-    <tr>
-      <td>at this time is not recommended that you use master for your production instances.  Better pick something which works for you and lock it via <code>:ref</code> in your chef</td>
-      <td> </td>
-      <td>puppet</td>
-      <td> </td>
-      <td>ansible</td>
-      <td> </td>
-      <td>bash script you name it.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Why so many repos?  One of the major changes, if not the main change, will be the splitting up of the <a href="https://github.com/sensu/sensu-community-plugins">Sensu Community Plugins</a> repo in the many smaller repositories.  Extensions will be broken out completely into their own repository as well.  These repos will be organized by application and contain all plugins and handlers used by the application.  This will allow much more granular deployments and easier versioning.  It will no longer be necessary to bump the entire project for a simple typo in a single plugin.  <a href="https://github.com/sensu/sensu-community-plugins/issues/985">Issue 985</a> has been created for this discussion.</p>
 
-<p>If you have installed Sensu using the omnibus package it will use an embedded version of ruby, but the ruby plugins here will use the system one. If you want to use the embedded ruby, which has the <code>sensu-plugin</code> gem installed as well, you can set <code>EMBEDDED_RUBY=true</code> in <code>/etc/default/sensu</code> and restart the Sensu services. This will put the embedded ruby first in the $PATH for commands run by the Sensu services.</p>
+<h3 id="packaging">Packaging</h3>
+
+<p>In the very near future each of these smaller repos will also be built into their own gem and released to RubyGems.  This will allow you to add ‘sensu-plugins-aws’ to your cookbook, manifest, or bundle and get either the latest version or a version of your choice.  At specific intervals throughout the year, the current thinking is quarterly, a meta-gem will be released containing the latest stable builds of every gem for those who would like to go the monolithic route.</p>
+
+<p>A user could also create their own met-gems if they would like, consisting of every gem needed for their own stack.</p>
+
+<p>The timeline, reasoning and further details can be found <a href="http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/27/sensu-plugins-roadmap.html">here</a> and <a href="https://github.com/sensu/sensu-community-plugins/issues/847">Issue 847</a> but in a nutshell there will be ample time for people to transition to this new idea.  New features will continue to be accepted into the old repo till at least May 2015 while a build and release pipeline is stabilized.  Around this time the old repo will be frozen for all feature requests, but bug and security fixes will still be actively merged till at least June.  I stress this timeline is very movable and dependent on a lot of hard work by several people.</p>
+
+<p>When the community feels it is ready and has faith in the new pipeline and build process, the old repo will be hard frozen and archived in place.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Documentation for the plugins will be automatically generated from RDoc sources, built into each gem and also served from a central location on this site.</p>
 
   </article>
 
