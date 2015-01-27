@@ -12,7 +12,7 @@ There are a lot changes dropping in the next few months and all of them should g
 
 Before we get too deep into things let me assure you that there will be no forced upgrades, changes in license/functionality, or anything else to harm our precious, held-together-with-duct-tape-and-<strike>perl</strike>ruby, monitors.  Sensu plugins was always designed to be an integral part of an open framework and that will not change.  What is going to change is the manner in which the plugins are written, test, built, and delivered.
 
-This has always been a community project built upon the hardwork and input of many people, sometimes though people don't realize they can or should contribute.  This [post](http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/27/sensu-plugins-roadmap.html) is a great example of how things will be done from now on.
+This has always been a community project built upon the hardwork and input of many people, sometimes though people don't realize they can or should contribute.  This [post](http://sensu-plugins.github.io/issue/2015/01/27/sensu-plugins-roadmap.html) is a great example of how things will be done from now on.
 
 ### Sensu Plugins Blog
 
@@ -28,10 +28,13 @@ In the very near future each of these smaller repos will also be built into thei
 
 A user could also create their own met-gems if they would like, consisting of every gem needed for their own stack.
 
-The timeline, reasoning and further details can be found [here](http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/27/sensu-plugins-roadmap.html) and [Issue 847](https://github.com/sensu/sensu-community-plugins/issues/847) but in a nutshell there will be ample time for people to transition to this new idea.  New features will continue to be accepted into the old repo till at least May 2015 while a build and release pipeline is stabilized.  Around this time the old repo will be frozen for all feature requests, but bug and security fixes will still be actively merged till at least June.  I stress this timeline is very movable and dependent on a lot of hard work by several people.
+The timeline, reasoning and further details can be found [here](http://sensu-plugins.github.io/issue/2015/01/27/sensu-plugins-roadmap.html) and [Issue 847](https://github.com/sensu/sensu-community-plugins/issues/847) but in a nutshell there will be ample time for people to transition to this new idea.  New features will continue to be accepted into the old repo till at least May 2015 while a build and release pipeline is stabilized.  Around this time the old repo will be frozen for all feature requests, but bug and security fixes will still be actively merged till at least June.  I stress this timeline is very movable and dependent on a lot of hard work by several people.
 
 When the community feels it is ready and has faith in the new pipeline and build process, the old repo will be hard frozen and archived in place.
 
 ### Documentation
 
 Documentation for the plugins will be automatically generated from RDoc sources, built into each gem and also served from a central location on this site.
+
+
+I hope to continue helping to build and work with this great community and I am always open to new ideas, ways of thinking, or being told I am flat-out wrong.
