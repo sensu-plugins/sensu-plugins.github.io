@@ -6,7 +6,7 @@ date:   2015-01-27 03:20:18
 categories: update
 ---
 
-Welcome to the new Sensu Plugins website and repos!
+Welcome to the new Sensu Plugins website and [repos](https://github.com/sensu-plugins)!
 
 There are a lot changes dropping in the next few months and all of them should greatly benefit the community.  A few of the changes have already been made, this site being a major one.  The [Developer Guidelines](http://sensu-plugins.github.io/contributing/) have been updated to reflect some of the new features dropping over the next several months and the new policies that these bring.
 
