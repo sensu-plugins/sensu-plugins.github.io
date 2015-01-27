@@ -8,4 +8,4 @@ permalink: /support/
 
 * Developer's Mailing List[sensu-dev@googlegroups.com](mailto://sensu-dev@googlegroups.com)
 
-* IRC #Sensu on irc.freenode.net
+* IRC [#Sensu](irc://irc.freenode.net:6697/sensu) on irc.freenode.net
