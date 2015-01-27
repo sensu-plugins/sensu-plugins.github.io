@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sensu Plugins</title>
-  <meta name="description" content="The home for all Sensu Official and Community plugins, handlers, extensions and mutators.
-">
+  <title>Sensu Plugins Roadmap</title>
+  <meta name="description" content="Issue #847">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://sensu-plugins.github.io/">
+  <link rel="canonical" href="http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/26/sensu-plugins-roadmap.html">
   <link rel="alternate" type="application/rss+xml" title="Sensu Plugins" href="http://sensu-plugins.github.io/feed.xml" />
 </head>
 
@@ -59,39 +58,64 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">Sensu Plugins Roadmap</h1>
+    <p class="post-meta">Jan 26, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 26, 2015</span>
+  <article class="post-content">
+    <p><a href="https://github.com/sensu/sensu-community-plugins/issues/847">Issue #847</a></p>
 
-        <h2>
-          <a class="post-link" href="/sensu-plugins/update/2015/01/26/welcome-to-sensu-plugins-new-home.html">Welcome to new Sensu Plugins!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2015</span>
+<h2 id="abstract">Abstract</h2>
+<p>Packaging and versioning of the plugins is something I know a lot of people want and for good reason.  I would like to purpose a thought and see how people feel about it. In a nutshell I would like to split the community-plugins repo in smaller repos, based upon application.  This would mean all the Windows plugins, handlers, etc would go into a repo named <strong>sensu-plugins-windows</strong>, the aws ones would go to <strong>sensu-plugins-aws</strong> and so one. Some projects already do this to some extent, specifically Hubot, and it presents many advantages.</p>
 
-        <h2>
-          <a class="post-link" href="/sensu-plugins/issue/2015/01/26/sensu-plugins-roadmap.html">Sensu Plugins Roadmap</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 26, 2015</span>
+<h2 id="pros">Pros</h2>
+<ul>
+  <li>Application groups are easier to package and version than a monolithic repository</li>
+  <li>Plugin groups could be installed by an automation tool or Sensu itself with ease and be dependent upon only those checks currently running</li>
+  <li>There would be no need to bump the entire plugins repo for a small change to a single plugin</li>
+  <li>A user could pin separate gem versions depending on their environment</li>
+</ul>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/01/26/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
+<h2 id="cons">Cons</h2>
+<ul>
+  <li>More overhead concerning dependency management</li>
+  <li>More jobs to create and manage</li>
+  <li>Plugin groups may not work for everyone</li>
+</ul>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>For those that want things the way they are we will create quarterly meta-gem releases of all the various gems, and these can be considered stable, whereas the individual gems could be considered production grade but active and the meta-gem would get built from each of these. This paves the way for company’s to create specific gemsets for only the software they run. For example a lamp stack meta-gem would consist of core(system), mysql, and apache.</p>
+
+<p>Dependency management could be somewhat solved over time as the community builds custom meta sets and such that all rely on a single dependency version, as they pin their version and run the included integration tests, if they pass then they could submit a PR back and we could bump the dependency for that specific gem.</p>
+
+<h2 id="proposed-timeframe">Proposed Timeframe</h2>
+
+<ul>
+  <li>February (Creation)</li>
+  <li>Split all repos</li>
+  <li>
+    <p>Create gems for each repo as they currently stand</p>
+  </li>
+  <li>March - April (Transition Period)</li>
+  <li>Maintain both architectures</li>
+  <li>Accept pull requests from <strong>sensu-community-plugins</strong> repo and new repos</li>
+  <li>
+    <p>Create build schedule and pipeline for new gems</p>
+  </li>
+  <li>May (Start cutover)</li>
+  <li>Stop accepting PR’s and issues for <strong>sensu-community-plugins</strong> repo for new functionality (bugs and security fixes still allowed)</li>
+  <li>
+    <p>Maintain desired build schedule for all new gems</p>
+  </li>
+  <li>June (End cutover)</li>
+  <li>Freeze <strong>sensu-community-plugins</strong> repo and stop accepting all PR’s and Issues</li>
+  <li>Maintain desired build schedule for all new gems</li>
+  <li>Create first unstable release of meta-gem package</li>
+</ul>
+
+  </article>
 
 </div>
 
