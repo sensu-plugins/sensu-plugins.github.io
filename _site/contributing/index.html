@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Developer Guidelines</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/contributing/">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Your awesome title</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/contributing/">Developer Guidelines</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Developer Guidelines</h1>
+  </header>
+
+  <article class="post-content">
+    <h1 id="developer-guidelines">Developer Guidelines</h1>
+
+<p>If you have a new plugin or handler, send a pull request! Don’t be afraid on pushing your PR with non-ruby code. Just let someone from <a href="https://github.com/sensu?tab=members">team</a> know. Maybe we can help you to rewrite your check to Ruby or even invent something completely new to test your work. Just don’t hesitate to contact us.</p>
+
+<h2 id="naming-conventions">Naming Conventions</h2>
+
+<p>Please format the names of scripts using dashes to separate words and with an
+extension (<code>.rb</code>, <code>.sh</code>, etc), and make sure they are <code>chmod +x</code>‘d.
+Extensions are unfortunately necessary for Sensu to be able to directly
+exec plugins and handlers on Windows.</p>
+
+<h2 id="coding-style">Coding Style</h2>
+
+<p>When developing your plugins please use the <a href="https://github.com/sensu/sensu-plugin">sensu plugin class</a>.  This will ensure that all plugins have an identical run structure.</p>
+
+<p>When using options please try and follow the following structure.  At the very least your option needs to include a description to assist the user with configration and deployment</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">option</span> <span class="ss">:port</span><span class="p">,</span>
+<span class="ss">short</span><span class="p">:</span> <span class="s1">&#39;-p PORT&#39;</span><span class="p">,</span>
+<span class="ss">long</span><span class="p">:</span> <span class="s1">&#39;--port PORT&#39;</span><span class="p">,</span>
+<span class="ss">description</span><span class="p">:</span> <span class="s1">&#39;Port&#39;</span><span class="p">,</span>
+<span class="ss">default</span><span class="p">:</span> <span class="s1">&#39;1234&#39;</span></code></pre></div>
+
+<p>Each plugin, handler, mutator, extension should use the following standard header</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#! /usr/bin/env ruby</span>
+<span class="c1">#  encoding: UTF-8</span>
+<span class="c1">#   &lt;script name&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># DESCRIPTION:</span>
+<span class="c1">#</span>
+<span class="c1"># OUTPUT:</span>
+<span class="c1">#   plain text, metric data, etc</span>
+<span class="c1">#</span>
+<span class="c1"># PLATFORMS:</span>
+<span class="c1">#   Linux, Windows, BSD, Solaris, etc</span>
+<span class="c1">#</span>
+<span class="c1"># DEPENDENCIES:</span>
+<span class="c1">#   gem: sensu-plugin</span>
+<span class="c1">#   gem: &lt;?&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># USAGE:</span>
+<span class="c1">#</span>
+<span class="c1"># NOTES:</span>
+<span class="c1">#</span>
+<span class="c1"># LICENSE:</span>
+<span class="c1">#   &lt;your name&gt;  &lt;your email&gt;</span>
+<span class="c1">#   Released under the same terms as Sensu (the MIT license); see LICENSE</span>
+<span class="c1">#   for details.</span>
+<span class="c1">#</span></code></pre></div>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>All documentation will be handled by <a href="https://github.com/rdoc/rdoc">RDoc</a> and we are using the default rdoc markup at this time. A brief introduction RDoc markup can be found <a href="http://docs.seattlerb.org/rdoc/RDoc/Markup.html">here</a>. All scripts should have as much documentation coverage as possible, ideally 100%.  You can test your coverage by installing RDoc locally and running</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rdoc -C &lt;filename&gt;</code></pre></div>
+
+<p>The output will tell you how much coverage you have without spending the time building the docs.  </p>
+
+<p>Documentation can always be made better, if you would like to contribute to it, have at it and submit a PR.</p>
+
+<h2 id="dependency-managment">Dependency Managment</h2>
+
+<p>Dependencies (ruby gems, packages, etc) and other requirements should
+be declared in the header of the plugin/handler file.  Try to use the standard library or the same dependencies as other plugins to keep the stack as small as possible.  If you have questions about using a specific gem feel free to ask.</p>
+
+<p>All scripts should contain the following dependency to ensure full compatibility.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span> <span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">&#39;1.9.0&#39;</span></code></pre></div>
+
+<h2 id="vagrant-box">Vagrant Box</h2>
+
+<p>There is a Vagrantfile with shell provisioning that will setup the major versions of Ruby and a sensu gemset for each if you wish to use it.  To get started install <a href="https://www.vagrantup.com/">Vagrant</a> then type <em>vagrant up</em> in the root directory of the repo.  Once it is up type <em>vagrant ssh</em> to remote into the box and then <em>cd /vagrant &amp;&amp; bundle install</em> to set all necessary dependencies.</p>
+
+<p>The box currently defaults to Ruby 2.1.4 but has 1.9.2, 1.9.3 and 2.0.0 installed as well.  See the file comments for further details.</p>
+
+<h2 id="testing">Testing</h2>
+
+<h3 id="linting">Linting</h3>
+<p>Only pull requests passing lint/tests will be merged.</p>
+
+<p>Rubocop is used to lint the style of the ruby plugins. This is done
+to standardize the style used within these plugins, and ensure high
+quality code.  Most current rules are currently in effect.  No linting is done on Ruby code prior to version 1.9.3 as Rubocop requires 1.9.2 and linting for it is identical to 1.9.3.  See the <a href=".travis.yml">travis.yml</a> and <a href="Rakefile">Rakefile</a> for details on what tests and versions are currently supported.  There are currently no plans to support Ruby 1.8.x</p>
+
+<p>You can test rubocop compliance for yourself by installing the gem and running <i>rubocop</i> from the command line.
+Running <i>rubocop -a</i> will attempt to autocorrect any issues, saving yourself considerable time in large files.</p>
+
+<p>If it truely makes sense for your code to violate a rule you can disable that rule with your code by either using</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># rubocop:disable &lt;rule&gt;, &lt;rule&gt;</span></code></pre></div>
+
+<p>at the end of the line in violation or</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">rubocop</span><span class="p">:</span><span class="n">disable</span> <span class="o">&lt;</span><span class="n">rule</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">rule</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
+<span class="ss">rubocop</span><span class="p">:</span><span class="n">enable</span> <span class="o">&lt;</span><span class="n">rule</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">rule</span><span class="o">&gt;</span></code></pre></div>
+
+<p>If you use either of these methods please mention in the PR as this should be kept to an absolute minimum at times, especially concerning method length and complexity, it makes sense to use on of the above methods.</p>
+
+<h3 id="rspec">Rspec</h3>
+
+<p>Currently we have RSpec3 as a <a href="https://github.com/sensu/sensu-plugin-spec">test framework</a>. Please add coverage for your check.  Checks will not be considered production grade and stable until they have complete coverage.</p>
+
+<p>You can use the included Vagrantfile for easy testing.  All necessary versions of Ruby can be installed with their own dedicated gem sets using RVM.  Just boot up the machine and drop into /vagrant and execute</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">default</span></code></pre></div>
+
+<p>to run all specs and rubocop tests.  RSpec tests are currently run against 1.9.2, 1.9.3, 2.0, and 2.1.  There are currently no plans to support 1.8.x.</p>
+
+<p>This is ~~little bit hard~~ almost impossible for non-ruby checks. Let someone from <a href="https://github.com/sensu?tab=members">team</a> know and maybe can can help.</p>
+
+<h2 id="issue-and-pull-request-submissions">Issue and Pull Request Submissions</h2>
+
+<p>If you see something wrong or come across a bug please open up an issue.  Try to include as much data in the issue as possible.  If you feel the issue is critical than tag a core  member and we will respond as soon as is feasible.</p>
+
+<p>When submitting a pull request please follow the guidelines below for the quickest possible merge.  These not only make our lives eaiser, but also keep the repo and commit history as clean as possible.</p>
+
+<ul>
+  <li>When at all possible do a  <code>git pull --rebase</code> both before you start working on the repo and then before you commit.  This will help ensure you have the most up to date codebase, Rubocop rules, and documentation.  It will also go along way towards cutting down or eliminating(hopefully) annoying merge commits.
+*</li>
+</ul>
+
+<p>If you wish to track the status of your PR or issue, check out our <a href="https://waffle.io/sensu/sensu-community-plugins">waffle.io</a>.  This single location will allow contributers to stay on top of interwinding issues more effectively.</p>
+
+<p>Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to one month. A lack of feedback in one month may require you to re-open your pull request.  </p>
+
+<h2 id="technical-debt">Technical Debt</h2>
+
+<p>For those who don’t deal with or understand technical debt, it is debt incurred when designing or developing software.  All the #FIXME, #HACK, etc littered through a script add up over time, this is your technical debt.</p>
+
+<h3 id="technical-debt-levels">Technical Debt Levels</h3>
+
+<p><strong>YELLOW</strong></p>
+
+<ul>
+  <li>simple issues that require basic Ruby and no more than 4 hours to fix</li>
+</ul>
+
+<p><strong>ORANGE</strong></p>
+
+<ul>
+  <li>these may require 4 - 8 hours but still only a basic or intermediate Ruby skillset</li>
+</ul>
+
+<p><strong>RED</strong></p>
+
+<ul>
+  <li>may require 8+ hours or some domain specific Ruby skills such as Amazon, or Elastic Search</li>
+</ul>
+
+<p>In order to quantify it and see what we actually have there is a rake task <em>calculate_debt</em>.  In order to run it you will need an auth token and write access to the repo.</p>
+
+<p>There are three locked issues on Github corresponding the to level of debt, if you want to help out just grab a file and tag it for fixing by either the original maintainer or another community member or fix it yourself if you can and submit a PR.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Your awesome title</li>
+          <li><a href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/jekyll">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">jekyll</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/jekyllrb">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">jekyllrb</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
