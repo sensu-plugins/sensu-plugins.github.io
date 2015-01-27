@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  Sensu Plugins Roadmap
+author: Matt Jones
 date:   2015-01-27 03:20:18
-categories: sensu-plugins issue
+categories: issue
 ---
 
 [Issue #847](https://github.com/sensu/sensu-community-plugins/issues/847)

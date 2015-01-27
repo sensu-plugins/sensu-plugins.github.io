@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Welcome to new Sensu Plugins!"
+author: Matt Jones
 date:   2015-01-27 03:20:18
-categories: sensu-plugins update
+categories: update
 ---
 
 Welcome to the new Sensu Plugins website and repos!

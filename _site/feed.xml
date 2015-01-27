@@ -6,8 +6,8 @@
 </description>
     <link>http://sensu-plugins.github.io/</link>
     <atom:link href="http://sensu-plugins.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Jan 2015 08:51:10 -0500</pubDate>
-    <lastBuildDate>Tue, 27 Jan 2015 08:51:10 -0500</lastBuildDate>
+    <pubDate>Tue, 27 Jan 2015 09:42:29 -0500</pubDate>
+    <lastBuildDate>Tue, 27 Jan 2015 09:42:29 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -43,11 +43,9 @@
 &lt;p&gt;Documentation for the plugins will be automatically generated from RDoc sources, built into each gem and also served from a central location on this site.&lt;/p&gt;
 </description>
         <pubDate>Mon, 26 Jan 2015 22:20:18 -0500</pubDate>
-        <link>http://sensu-plugins.github.io/sensu-plugins/update/2015/01/26/welcome-to-sensu-plugins-new-home.html</link>
-        <guid isPermaLink="true">http://sensu-plugins.github.io/sensu-plugins/update/2015/01/26/welcome-to-sensu-plugins-new-home.html</guid>
+        <link>http://sensu-plugins.github.io/update/2015/01/26/welcome-to-sensu-plugins-new-home.html</link>
+        <guid isPermaLink="true">http://sensu-plugins.github.io/update/2015/01/26/welcome-to-sensu-plugins-new-home.html</guid>
         
-        
-        <category>sensu-plugins</category>
         
         <category>update</category>
         
@@ -105,11 +103,9 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 26 Jan 2015 22:20:18 -0500</pubDate>
-        <link>http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/26/sensu-plugins-roadmap.html</link>
-        <guid isPermaLink="true">http://sensu-plugins.github.io/sensu-plugins/issue/2015/01/26/sensu-plugins-roadmap.html</guid>
+        <link>http://sensu-plugins.github.io/issue/2015/01/26/sensu-plugins-roadmap.html</link>
+        <guid isPermaLink="true">http://sensu-plugins.github.io/issue/2015/01/26/sensu-plugins-roadmap.html</guid>
         
-        
-        <category>sensu-plugins</category>
         
         <category>issue</category>
         
