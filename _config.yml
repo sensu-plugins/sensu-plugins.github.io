@@ -13,7 +13,7 @@ sensu_plugin_org:  sensu-plugins
 sensu_app_org: sensu
 
 exclude: ["vendor"]
-
+exclude: [vendor]
 # Build settings
 markdown:    kramdown
 highlighter: rouge
