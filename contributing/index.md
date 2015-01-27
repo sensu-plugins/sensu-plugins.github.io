@@ -18,7 +18,7 @@ exec plugins and handlers on Windows.
 
 When developing your plugins please use the [sensu plugin class](https://github.com/sensu/sensu-plugin).  This will ensure that all plugins have an identical run structure.
 
-When using options please try and follow the following structure.  At the very least your option needs to include a description to assist the user with configration and deployment
+When using options please use the following structure.  At the very least your option needs to include a description to assist the user with configuration and deployment.
 
 {% highlight ruby %}
 option :port,
@@ -32,7 +32,7 @@ Each plugin, handler, mutator, extension should use the following standard heade
 
 {% highlight ruby %}
 #! /usr/bin/env ruby
-#  encoding: UTF-8
+#
 #   <script name>
 #
 # DESCRIPTION:
@@ -77,29 +77,25 @@ be declared in the header of the plugin/handler file.  Try to use the standard l
 
 All scripts should contain the following dependency to ensure full compatibility.
 
-{% highlight ruby %}
-require 'rubygems' if RUBY_VERSION < '1.9.0'
-{% endhighlight  %}
-
 ## Vagrant Box
 
-There is a Vagrantfile with shell provisioning that will setup the major versions of Ruby and a sensu gemset for each if you wish to use it.  To get started install [Vagrant](https://www.vagrantup.com/) then type *vagrant up* in the root directory of the repo.  Once it is up type *vagrant ssh* to remote into the box and then *cd /vagrant && bundle install* to set all necessary dependencies.
+There is a Vagrantfile in each repo with shell provisioning that will setup the major versions of Ruby and a sensu gemset for each if you wish to use it.  To get started install [Vagrant](https://www.vagrantup.com/) then type *vagrant up* in the root directory of the repo.  Once it is up type *vagrant ssh* to remote into the box and then *cd /vagrant && bundle install* to set all necessary dependencies.
 
-The box currently defaults to Ruby 2.1.4 but has 1.9.2, 1.9.3 and 2.0.0 installed as well.  See the file comments for further details.
+The box currently defaults to Ruby 2.1.4 but has 1.9.3 and 2.0.0 installed as well.  See the file comments for further details.
 
 ## Testing
 
 ### Linting
 Only pull requests passing lint/tests will be merged.
 
-Rubocop is used to lint the style of the ruby plugins. This is done
-to standardize the style used within these plugins, and ensure high
-quality code.  Most current rules are currently in effect.  No linting is done on Ruby code prior to version 1.9.3 as Rubocop requires 1.9.2 and linting for it is identical to 1.9.3.  See the [travis.yml](.travis.yml) and [Rakefile](Rakefile) for details on what tests and versions are currently supported.  There are currently no plans to support Ruby 1.8.x
+Rubocop is used to lint the style of the ruby plugins. This is done to standardize the style used within these plugins, and ensure high quality code.  Most current rules are currently in effect.  No linting is done on Ruby code prior to version 2x.  See the `.travis.yml` and `Rakefile` in each repository for specific details as the tasks may vary between repo.
 
-You can test rubocop compliance for yourself by installing the gem and running <i>rubocop</i> from the command line.
-Running <i>rubocop -a</i> will attempt to autocorrect any issues, saving yourself considerable time in large files.
+Ruby 1.9.2 and 1.8.7 support has been dropped, the plugins may still function with these versions but no tests will be run against them nor will code, such as hashes, be specifically written or enforced to ensure backwards compatibility.
 
-If it truely makes sense for your code to violate a rule you can disable that rule with your code by either using
+You can test rubocop compliance for yourself by installing the gem and running `rubocop` from the command line.
+Running `rubocop -a` will attempt to autocorrect any issues, saving yourself considerable time in large files.
+
+If it truly makes sense for your code to violate a rule you can disable that rule with your code by either using
 
 {% highlight ruby %}
 # rubocop:disable <rule>, <rule>
@@ -113,7 +109,7 @@ rubocop:disable <rule>, <rule>
 rubocop:enable <rule>, <rule>
 {% endhighlight  %}
 
-If you use either of these methods please mention in the PR as this should be kept to an absolute minimum at times, especially concerning method length and complexity, it makes sense to use on of the above methods.
+If you use either of these methods please mention in the PR as this should be kept to an absolute minimum at times, but can be necessary, especially concerning method length and complexity.
 
 ### Rspec
 
@@ -125,20 +121,20 @@ You can use the included Vagrantfile for easy testing.  All necessary versions o
 rake default
 {% endhighlight  %}
 
-to run all specs and rubocop tests.  RSpec tests are currently run against 1.9.2, 1.9.3, 2.0, and 2.1.  There are currently no plans to support 1.8.x.
+to run all specs and rubocop tests.  RSpec tests are currently run against 2.0, and 2.1.  There are currently no plans to support 1.8.x or test against 1.9.2 and 1.9.3.
 
-This is ~~little bit hard~~ almost impossible for non-ruby checks. Let someone from [team](https://github.com/sensu?tab=members) know and maybe can can help.
+This is little bit hard almost impossible for non-ruby checks. Let someone from [team](https://github.com/sensu?tab=members) know and maybe can can help.
 
 ## Issue and Pull Request Submissions
 
 If you see something wrong or come across a bug please open up an issue.  Try to include as much data in the issue as possible.  If you feel the issue is critical than tag a core  member and we will respond as soon as is feasible.
 
-When submitting a pull request please follow the guidelines below for the quickest possible merge.  These not only make our lives eaiser, but also keep the repo and commit history as clean as possible.
+When submitting a pull request please follow the guidelines below for the quickest possible merge.  These not only make our lives easier, but also keep the repo and commit history as clean as possible.
 
 * When at all possible do a  ```git pull --rebase``` both before you start working on the repo and then before you commit.  This will help ensure you have the most up to date codebase, Rubocop rules, and documentation.  It will also go along way towards cutting down or eliminating(hopefully) annoying merge commits.
 *
 
-If you wish to track the status of your PR or issue, check out our [waffle.io](https://waffle.io/sensu/sensu-community-plugins).  This single location will allow contributers to stay on top of interwinding issues more effectively.
+If you wish to track the status of your PR or issue, check out our [waffle.io](https://waffle.io/sensu/sensu-community-plugins).  This single location will allow contributors to stay on top of interwinding issues more effectively.
 
 Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to one month. A lack of feedback in one month may require you to re-open your pull request.  
 
@@ -161,5 +157,3 @@ For those who don't deal with or understand technical debt, it is debt incurred 
 * may require 8+ hours or some domain specific Ruby skills such as Amazon, or Elastic Search
 
 In order to quantify it and see what we actually have there is a rake task *calculate_debt*.  In order to run it you will need an auth token and write access to the repo.
-
-There are three locked issues on Github corresponding the to level of debt, if you want to help out just grab a file and tag it for fixing by either the original maintainer or another community member or fix it yourself if you can and submit a PR.
