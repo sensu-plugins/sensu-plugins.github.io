@@ -6,9 +6,9 @@
 </description>
     <link>http://sensu-plugins.github.io/</link>
     <atom:link href="http://sensu-plugins.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Jan 2015 03:35:52 -0500</pubDate>
-    <lastBuildDate>Tue, 27 Jan 2015 03:35:52 -0500</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Tue, 27 Jan 2015 03:45:16 -0500</pubDate>
+    <lastBuildDate>Tue, 27 Jan 2015 03:45:16 -0500</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Welcome to new Sensu Plugins!</title>
