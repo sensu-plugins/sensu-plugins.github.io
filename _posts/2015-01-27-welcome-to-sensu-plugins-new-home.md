@@ -20,7 +20,7 @@ Whenever major changes are coming or hot issues, bugs, etc present themselves we
 
 ### New Repositories
 
-Why so many repos?  One of the major changes, if not the main change, will be the splitting up of the [Sensu Community Plugins](https://github.com/sensu/sensu-community-plugins) repo in the many smaller repositories.  Extensions will be broken out completely into their own repository as well.  These repos will be organized by application and contain all plugins and handlers used by the application.  This will allow much more granular deployments and easier versioning.  It will no longer be necessary to bump the entire project for a simple typo in a single plugin.  [Issue 985](https://github.com/sensu/sensu-community-plugins/issues/985) has been created for this discussion.
+Why so many repos?  One of the major changes, if not the main change, will be the splitting up of the [Sensu Community Plugins](https://github.com/sensu/sensu-community-plugins) repo in the many smaller repositories.  Extensions, handlers, and mutators will be broken out completely into their own repositories as well.  These repos will be organized by application and contain all plugins used by the application.  This will allow much more granular deployments and easier versioning.  It will no longer be necessary to bump the entire project for a simple typo in a single plugin.  [Issue 985](https://github.com/sensu/sensu-community-plugins/issues/985) has been created for this discussion.
 
 ### Packaging
 
