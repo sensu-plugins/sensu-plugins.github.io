@@ -26,9 +26,9 @@ Why so many repos?  One of the major changes, if not the main change, will be th
 
 In the very near future each of these smaller repos will also be built into their own gem and released to RubyGems.  This will allow you to add 'sensu-plugins-aws' to your cookbook, manifest, or bundle and get either the latest version or a version of your choice.  At specific intervals throughout the year, the current thinking is quarterly, a meta-gem will be released containing the latest stable builds of every gem for those who would like to go the monolithic route.
 
-A user could also create their own met-gems if they would like, consisting of every gem needed for their own stack.
+A user could also create their own meta-gems if they would like, consisting of every gem needed for their own stack.
 
-The timeline, reasoning and further details can be found [here](http://sensu-plugins.github.io/issue/2015/01/27/sensu-plugins-roadmap.html) and [Issue 847](https://github.com/sensu/sensu-community-plugins/issues/847) but in a nutshell there will be ample time for people to transition to this new idea.  New features will continue to be accepted into the old repo till at least May 2015 while a build and release pipeline is stabilized.  Around this time the old repo will be frozen for all feature requests, but bug and security fixes will still be actively merged till at least June.  I stress this timeline is very movable and dependent on a lot of hard work by several people.
+The timeline, reasoning, and further details can be found [here](http://sensu-plugins.github.io/issue/2015/01/27/sensu-plugins-roadmap.html) and [Issue 847](https://github.com/sensu/sensu-community-plugins/issues/847) but in a nutshell there will be ample time for people to transition to this new concept.  New features will continue to be accepted into the old repo till at least May 2015 while a build and release pipeline is stabilized.  Around this time the old repo will be frozen for all feature requests, bug and security fixes will still be actively merged till at least June.  I stress this timeline is very movable and dependent on a lot of hard work by several people.
 
 When the community feels it is ready and has faith in the new pipeline and build process, the old repo will be hard frozen and archived in place.
 
