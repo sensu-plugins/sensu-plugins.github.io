@@ -8,7 +8,7 @@ categories: update
 
 Welcome to the new Sensu Plugins website and [repos](https://github.com/sensu-plugins)!
 
-There are a lot changes dropping in the next few months and all of them should greatly benefit the community.  A few of the changes have already been made, this site being a major one.  The [Developer Guidelines](http://sensu-plugins.github.io/contributing/) have been updated to reflect some of the new features dropping over the next several months and the new policies that these bring.
+There are a lot changes dropping in the next few months and all of them should greatly benefit the community.  A few of the changes have already been made, this site being a major one.  The [Developer Guidelines](http://sensu-plugins.github.io/contributing/) have also been updated to reflect some of the new features dropping over the next several months and the new policies that these bring.
 
 Before we get too deep into things let me assure you that there will be no forced upgrades, changes in license/functionality, or anything else to harm our precious, held-together-with-duct-tape-and-<strike>perl</strike>ruby, monitors.  Sensu plugins was always designed to be an integral part of an open framework and that will not change.  What is going to change is the manner in which the plugins are written, test, built, and delivered.
 
