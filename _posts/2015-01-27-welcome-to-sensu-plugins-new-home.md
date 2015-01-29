@@ -32,6 +32,10 @@ The timeline, reasoning, and further details can be found [here](http://sensu-pl
 
 When the community feels it is ready and has faith in the new pipeline and build process, the old repo will be hard frozen and archived in place.
 
+### Security
+
+Due to the nature and use of these plugins and the fact that some of the monitors can be fairly invasive to a production system, all sensu-plugins gems will be signed.  While many of the dependencies we rely upon are not, and no solution is perfect every little bit helps.  As gems get released documentation will be created and posted on how to take advantage of this if your environment or personal predilections desire this feature.  For those who are not concerned a standard `bundle install` or `gem install` will still work without issue, but for the sake of your system and piece of mind I urge you to utilize this.
+
 ### Documentation
 
 Documentation for the plugins will be automatically generated from RDoc sources, built into each gem and also served from a central location on this site.
