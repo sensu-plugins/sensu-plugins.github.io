@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Developer Guidelines
-permalink: /contributing/
+title: Development
+permalink: /development/
 ---
 
 
@@ -60,13 +60,11 @@ Each plugin, handler, mutator, extension should use the following standard heade
 
 ## Documentation
 
-All documentation will be handled by [RDoc](https://github.com/rdoc/rdoc) and we are using the default rdoc markup at this time. A brief introduction RDoc markup can be found [here](http://docs.seattlerb.org/rdoc/RDoc/Markup.html). All scripts should have as much documentation coverage as possible, ideally 100%.  You can test your coverage by installing RDoc locally and running
+All documentation will be handled by [Yard](http://yardoc.org/) and we are using the default markup at this time. A brief introduction Yard markup can be found [here](http://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md). All scripts should have as much documentation coverage as possible, ideally 100%.  You can test your coverage by installing Yard locally and running
 
 {% highlight bash %}
-rdoc -C <filename>
+rake yard
 {% endhighlight %}
-
-The output will tell you how much coverage you have without spending the time building the docs.  
 
 Documentation can always be made better, if you would like to contribute to it, have at it and submit a PR.
 
@@ -134,9 +132,9 @@ When submitting a pull request please follow the guidelines below for the quicke
 * When at all possible do a  ```git pull --rebase``` both before you start working on the repo and then before you commit.  This will help ensure you have the most up to date codebase, Rubocop rules, and documentation.  It will also go along way towards cutting down or eliminating(hopefully) annoying merge commits.
 *
 
-If you wish to track the status of your PR or issue, check out our [waffle.io](https://waffle.io/sensu/sensu-community-plugins).  This single location will allow contributors to stay on top of interwinding issues more effectively.
+If you wish to track the status of your PR or issue, check out our [waffle.io](https://waffle.io/sensu-plugins/sensu-plugins.github.io).  This single location will allow contributors to stay on top of interwinding issues more effectively.  As the number of repositories grow and issues cross those bounds this will be the main organizational tool for tracking.
 
-Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to one month. A lack of feedback in one month may require you to re-open your pull request.  
+Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to 60 days. A lack of feedback in after this may require you to re-open your pull request.  
 
 ## Technical Debt
 

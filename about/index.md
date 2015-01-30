@@ -10,7 +10,7 @@ In the future, some sort of browsing/metadata/installation system will be implem
 
 ## Production usage
 
-Linters currently run against Ruby 2.0 and 2.1 and unit/integration tests are being run against 1.9.3, 2.0, and 2.1.  There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu, directions on this can be found in the [Sensu FAQ](http://sensuapp.org/docs/0.12/faq) or below.
+Linters currently run against Ruby 2.0 and 2.1 and  tests are being run against 1.9.3, 2.0, and 2.1 if they are written.  There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu, directions on this can be found in the [Sensu FAQ](http://sensuapp.org/docs/0.12/faq) or below.
 
 Gems will be built against all current versions of Ruby and one EOL Ruby, currently 1.9.3, will be actively supported.
 Because of the nature of these repositories:
