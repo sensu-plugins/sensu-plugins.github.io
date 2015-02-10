@@ -1,8 +1,8 @@
----
+<!-- ---
 layout: page
 title: Developer Guidlines
-permalink: /development/guidelines.html
----
+#permalink: /development/guidelines.html
+--- -->
 
 ## Naming Conventions
 
