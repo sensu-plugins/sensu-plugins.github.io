@@ -13,6 +13,6 @@ The easiest way to work with the repos is to clone [GIR](https://github.com/sens
 
 #### [Development Guidelines](http://sensu-plugins.github.io/development/guidelines.html)
 
-#### [Working with GIR](http://sensu-plugins.github.io/development/gir.html)
+#### [Working with GIR](http://sensu-plugins.github.io/development/gir)
 
 #### Google Summer of Code
