@@ -71,7 +71,7 @@ be declared in the header of the plugin/handler file.  Try to use the standard l
 
 ## Vagrant Boxes
 
-There is a [Vagrantfile][4] in each repo with shell provisioning that will setup the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR]9https://github.com/sensu-plugins/GIR) type `rake vagrant:up plugin=<app>` from the PROJECT_ROOT.  Once it is up type `vagrant ssh` `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
+There is a [Vagrantfile][4] in each repo with shell provisioning that will setup the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR]9https://github.com/sensu-plugins/GIR) type `rake vagrant:up plugin=<app>` from the PROJECT_DIRECTORY.  Once it is up type `vagrant ssh` `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
 
 The box currently defaults to Ruby 2.1.4 but has 1.9.3 and 2.0.0 are available as well, just uncomment them from the install script.  See the file comments for further details.
 
@@ -85,7 +85,7 @@ Rubocop is used to lint the style of the ruby plugins. This is done to standardi
 
 Ruby 1.9.2 and 1.8.7 support has been dropped, the plugins may still function with these versions but no tests will be run against them nor will code, such as hashes, be specifically written or enforced to ensure backwards compatibility.
 
-You can test rubocop compliance for yourself by installing the gem and running `rake test:rubocop plugin=<app>` from the PROJECT_ROOT.  Running `rake test:rubocop_fix plugin=<app>` will attempt to autocorrect any issues, saving yourself considerable time in large files.
+You can test rubocop compliance for yourself by installing the gem and running `rake test:rubocop plugin=<app>` from the PROJECT_DIRECTORY.  Running `rake test:rubocop_fix plugin=<app>` will attempt to autocorrect any issues, saving yourself considerable time in large files.
 
 If it truly makes sense for your code to violate a rule you can disable that rule with your code by either using
 
