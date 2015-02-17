@@ -15,4 +15,4 @@ The easiest way to work with the repos is to clone [GIR](https://github.com/sens
 
 #### [Working with GIR](http://sensu-plugins.github.io/development/gir)
 
-#### Google Summer of Code
+#### Google Summer of Code(http://sensu-plugins.github.io/development/gsoc15)
