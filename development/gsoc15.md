@@ -3,25 +3,15 @@ layout: page
 permalink: /development/gsoc15.html
 ---
 
----
-title: "GSoC 2015 Ideas"
-hide_toc: true
----
+## Sensu Plugins GSoC 2015 Ideas
 
-# GSoC 2015 Ideas
+Creating a set of production grade gems from the [Sensu Community Plugins][2] is a huge task that will take considerable time; only with the continued effort of many people can this goal can be achieved.
 
-## Sensu Core
-...
+The original community plugins repo has already been split in smaller [repos][3], based upon application. This would mean all the Windows plugins, handlers, etc are in a repo named sensu-plugins-windows, the aws ones are in sensu-plugins-aws and so on.
 
-## Sensu Community Plugins
+This is only the first step towards completing the transformation, existing tooling will need to be improved and new tooling created for managing all the repos separately but also as a whole.  A maintainer should be able to issue a single command and have a template generated and installed in all repos, manually copying a file to every repo is so 2006. :D
 
-Creating a set of production grade gems from the [Sensu Community Plugins][2] is a huge task that will take considerable time, only with the continued effort of many people can this goal can be achieved.
-
-The original community plugins repo has been split in smaller [repos][3], based upon application. This would mean all the Windows plugins, handlers, etc are in a repo named sensu-plugins-windows, the aws ones are in sensu-plugins-aws and so on.
-
-This is only the first step towards completing the transformation, existing tooling will need to be improved and new tooling created for managing all the repos separately but also as a whole.  A maintainer should be able to issue a single command and have a template generated and installed in all repos, manually copying a file to every repo is so 2006, :D
-
-### Task 1 General refactoring of community plugins code base
+### Task: General refactoring of community plugins code base
 
 **Brief explanation:**
 
@@ -30,7 +20,7 @@ All the binaries in a repository should be broken down into libraries and any co
 **Expected Results:**
 
 * Minimal code duplication
-* Standard Ruby coding practices
+* [Standard][4] Ruby coding practices
 * Ephemeral data whenever needed, no traces left on a monitored system including temp files used to store state data
 * Favor a pure ruby method, over a arch specific method even at the sacrifice of code complexity ie sys-filesystem gem vs `df`
 * **Note** Not every repository needs to be complete, a list of high priority repos or ones of particular interest will be mutually determined
@@ -51,13 +41,13 @@ This would be a great project for someone who wants to improve their Ruby skills
 
 **Mentor:**
 
-[Matt Jones](https://github.com/mattyjones) or [Artem Chernikov](https://github.com/kalabiyau)
+[Matt Jones][5] or [Artem Chernikov][6]
 
 ### Task 2 Automated testing framework built around Travis using standard Ruby methods, practices, and tools
 
 **Brief explanation:**
 
-In order to be considered production grade test coverage needs to be fairly high and not everyone has the time or ability to write tests. A framework should be designed and built to automate the process of writing and executing tests.  There is a fair amount of latitude in how this is accomplished as minimal work has been done on this.
+In order to be considered production grade test coverage needs to be fairly high and not everyone has the time or ability to write tests. A framework should be designed and built to automate the process of writing and executing tests.  There is a fair amount of latitude in how this is accomplished as minimal work has been done on this. A good starting point would be the [sensu-plugins-spec][7] repo.
 
 **Expected Results:**
 
@@ -84,21 +74,21 @@ This would be a great project for someone who wants to improve their Ruby skills
 
 **Mentor:**
 
-[Matt Jones](https://github.com/mattyjones) or [Artem Chernikov](https://github.com/kalabiyau)
+[Matt Jones][5] or [Artem Chernikov][6]
 
-### Task 3 Integrate Github, Rubygems, and other existing Services into the project [site][3] to give users a simple comprehensive directory of all monitors, handlers, and tools.
+### Task 3 A simple comprehensive directory of all monitors, handlers, and tools.
 
 **Brief explanation:**
 
-With the split of the community repo in ~150 separate repos, user may have a hard time finding a particular monitor or know that a monitor or handler for a service already exists.  There should be a directory we can point them to that will offer the functionality in a clean manner.  The directory should be generated automatically upon the release of a new gem, github tag, or repo.
+With the split of the community repo in ~150 separate repos, user may have a hard time finding a particular monitor or know that a monitor or handler for a service already exists.  There should be a directory we can point them to that will offer the functionality in a clean manner.  The directory should be updated automatically upon the release of a new gem, github tag, or repo.
 
 **Expected Results:**
 
-We would like a solid design and poc of the code and tools necessary to build the directory. It need not be complete but substantial progress should have been made and it should be in a poc state with complete functionality.
+We would like a solid design and poc of the code and tools necessary to build and maintain the directory. It need not be complete but substantial progress should have been made and it should be in a poc state with complete functionality.
 
 **Why Work On This:**
 
-Not much has been done on this front yet so the student would in effect have free rein with the design as long as it meets the functional requirements and the code is clean modular and stable.  This would include the ability to design the layout, pick the methods to gather the required data and select the best language for the project.
+Not much has been done on this front yet so the student would in effect have free rein with the design as long as it meets the functional requirements and the code is clean modular and stable.  This would include the ability to design the layout, pick the methods to gather the required data and select the best language and tools for the project.
 
 Guidance is available on these topics as well as examples of the types of functionality and style we are looking for.
 
@@ -117,9 +107,13 @@ Guidance is available on these topics as well as examples of the types of functi
 
 **Mentor:**
 
-[Matt Jones](https://github.com/mattyjones) or [Artem Chernikov](https://github.com/kalabiyau)
+[Matt Jones][5] or [Artem Chernikov][6]
 
 
-[1]: https://github.com/sensu-plugins/GIR
+[1]: http://sensu-plugins.github.io/development/gir
 [2]: https://github.com/sensu/sensu-community-plugins
 [3]: https://github.com/sensu-plugins
+[4]: https://github.com/bbatsov/ruby-style-guide
+[5]: https://github.com/mattyjones
+[6]: https://github.com/kalabiyau
+[7]: https://github.com/sensu/sensu-plugin-spec
