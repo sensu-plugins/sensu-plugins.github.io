@@ -30,3 +30,4 @@ There is a still a lot of work needed to get these repos to stable, production g
 [1]: https://github.com/sensu-plugins
 [2]: https://github.com/sensu-plugins/sensu-plugins-aws/issues/2
 [3]: https://github.com/sensu-plugins/sensu-plugins-filesystem-checks
+[4]: http://semver.org/
