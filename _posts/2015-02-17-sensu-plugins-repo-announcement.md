@@ -5,7 +5,7 @@ author: Matt Jones
 date:   2015-02-17 10:56:23
 ---
 
-The split of the community-plugins repo is complete.  The new repos can be found [here][1]. Details on the ongoing migration can be found here and here.
+The split of the community-plugins repo is complete.  The new repos can be found [here][1].
 
 The short of it is that no functionality has changed and gems have not been created for each repo yet.  There are however several breaking changes that need to be accounted for.
 
@@ -23,6 +23,7 @@ While the community-plugins repo is still considered authoritative, these new re
 
 When the new repos reach more stable states, within the next few months, the corresponding checks in the community-plugins repo will be frozen for all new features.  At this point when submitting a feature PR you may be asked to pull the new repo containing the check and submit it there.  Bug fixes will still continue to be accepted for all plugins until the actual hard cutover.  
 
+Release tags will start to appear for many of these repos fairly quickly as well, most will be flagged as prerelease to account for anything that may still break as things are shifted and moved but rest assured [semantic][4] versioning will be strictly followed and once the github prerelease flag or the alpha tag from the gem is removed, no breaking changes will occur.
 
 There is a still a lot of work needed to get these repos to stable, production grade state but rest assured they will get there and we will all be able to sleep a little better at night.
 
