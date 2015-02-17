@@ -7,7 +7,7 @@ permalink: /development/gsoc15.html
 
 Creating a set of production grade gems from the [Sensu Community Plugins][2] is a huge task that will take considerable time; only with the continued effort of many people can this goal can be achieved.
 
-The original community plugins repo has already been split in smaller [repos][3], based upon application. This would mean all the Windows plugins, handlers, etc are in a repo named sensu-plugins-windows, the aws ones are in sensu-plugins-aws and so on.
+The original community plugins repo has already been split in smaller [repos][3], based upon application. This means all the Windows plugins, handlers, etc are in a repo named sensu-plugins-windows, the aws ones are in sensu-plugins-aws and so on.
 
 This is only the first step towards completing the transformation, existing tooling will need to be improved and new tooling created for managing all the repos separately but also as a whole.  A maintainer should be able to issue a single command and have a template generated and installed in all repos, manually copying a file to every repo is so 2006. :D
 
@@ -31,6 +31,7 @@ This would be a great project for someone who wants to improve their Ruby skills
 
 **Knowledge prerequisite:**
 
+* general Ruby knowledge or advanced knowledge of Perl/Python/<scripting language>
 * general concepts of monitoring or willingness to learn them
 * general understanding of how to define, generate, and handle exit codes and what they mean within a monitoring environment
 * must believe in and understand treating infrastructure as code, ephemeral data, and why this is necessary in a cloud environment
@@ -145,13 +146,13 @@ A set of completed, stable, and production grade monitors, handlers, etc that ar
 
 Freedom to explore.  Pick a topic and figure out how it works, is commonly used, and fails, then effectively code ways to detect or possibly correct these failures.  A well defined scope will be created with the student to prevent chasing edge cases, feature creep, and black holes.
 
-You will get a feel for how infrastructure developers and system administrators tackle a monitoring problem and how an effective monitor is written from design to code, through to testing and production use.  You will get a chance to own the problem and create a the solution based upon your personal preferences while adhering to published Developer Guidelines.
+You will get a feel for how infrastructure developers and system administrators tackle a monitoring problem and how an effective monitor is written from design to code, through to testing and production use.  You will get a chance to own the problem and create a solution based upon your personal preferences while adhering to published Developer Guidelines.
 
 **Note** Due to the nature of this task the scope will be carefully considered and may be evaluated at specific intervals taking into account the task goals and the students learning ability.
 
 **Knowledge prerequisite:**
 
-* general Ruby knowledge or advanced knowledge of Perl/Python/<scripting language>
+* general Ruby knowledge or advanced knowledge of Perl/Python/Go/C
 * general concepts of monitoring or willingness to rapidly learn them
 * general understanding of how to define, generate, and handle exit codes and what they mean within a monitoring environment
 * must believe in and understand treating infrastructure as code, ephemeral data, and why this is necessary in a cloud environment
@@ -159,7 +160,7 @@ You will get a feel for how infrastructure developers and system administrators 
 
 **Skill Level:**
 
-* beginner..advanced (depends on chosen topic)
+* beginner.....advanced (depends on chosen topic)
 
 **Mentor:**
 
