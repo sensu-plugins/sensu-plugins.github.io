@@ -6,15 +6,17 @@ permalink: /development/guidelines.html
 
 ## Naming Conventions
 
-Please format the names of scripts using dashes to separate words and with an extension (`.rb`, `.sh`, etc), and make sure they are `chmod +x`'d. Extensions are unfortunately necessary for Sensu to be able to directly exec plugins and handlers on Windows.
+* All binaries should start with either **handler**, **check**, **metrics**, **extension**, or **mutator** depending on their primary function.  This is done to ensure that a user can tell from the command what the primary action of the script is.  It also makes things eaiser for infrastructure tools.
 
-Any repos created need to follow te format of *sensu-plugins-<app>*, where *<app>* is the group name such as windows, disk-checks, or influxdb.  The exception to the rule are repos used for the site or tooling such as GIR or sensu-plugins.github.io.
+* Please format the names of scripts using dashes to separate words and with an extension (`.rb`, `.sh`, etc), and make sure they are `chmod +x`'d. Extensions are unfortunately necessary for Sensu to be able to directly exec plugins and handlers on Windows.  There is a rake task that is run by travis that will automatically make all files in */bin* executable.
+
+* Any repos created need to follow te format of *sensu-plugins-<app>*, where *<app>* is the group name such as windows, disk-checks, or influxdb.  The exception to the rule are repos used for the site or tooling such as GIR or sensu-plugins.github.io.  This is done so that the rake tasks and other automation tools can easily parse Github and effectively work with the ~150+ repos.
 
 ## Coding Style
 
-When developing your plugins please use the [sensu plugin class][1].  This will ensure that all plugins have an identical run structure.
+* When developing your plugins please use the [sensu plugin class][1].  This will ensure that all plugins have an identical run structure.
 
-When using options please use the following structure.  At the very least your option needs to include a description to assist the user with configuration and deployment.
+* When using options please use the following structure.  At the very least your option needs to include a description to assist the user with configuration and deployment.
 
 {% highlight ruby %}
 option :port,
@@ -24,7 +26,7 @@ description: 'Port',
 default: '1234'
 {% endhighlight %}
 
-Each script should use the following standard header:
+* Each script should use the following standard header:
 
 {% highlight ruby %}
 #! /usr/bin/env ruby
@@ -56,7 +58,7 @@ Each script should use the following standard header:
 
 ## Documentation
 
-All documentation will be handled by [Yard][2] and we are using the default markup at this time. A brief introduction Yard markup can be found [here][3]. All scripts should have as much documentation coverage as possible, ideally 100%.  You can test your coverage by installing Yard locally and running
+All documentation will be handled by [Yard][2] and using the default markup at this time. A brief introduction to Yard markup can be found [here][3]. All scripts should have as much documentation coverage as possible, ideally 100%.  You can test your coverage by installing Yard locally and running
 
 {% highlight bash %}
 rake yard
@@ -66,22 +68,21 @@ Documentation can always be made better, if you would like to contribute to it, 
 
 ## Dependency Management
 
-Dependencies (ruby gems, packages, etc) and other requirements should
-be declared in the header of the plugin/handler file.  Try to use the standard library or the same dependencies as other plugins to keep the stack as small as possible.  If you have questions about using a specific gem feel free to ask.
+Dependencies (ruby gems, packages, etc) and other requirements should be declared in the header of the plugin/handler file.  Try to use the standard library or the same dependencies as other plugins to keep the stack as small as possible.  If you have questions about using a specific gem feel free to ask.
 
 ## Vagrant Boxes
 
-There is a [Vagrantfile][4] in each repo with shell provisioning that will setup the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR]9https://github.com/sensu-plugins/GIR) type `rake vagrant:up plugin=<app>` from the PROJECT_DIRECTORY.  Once it is up type `vagrant ssh` `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
+There is a [Vagrantfile][4] in each repo with shell provisioning that is capable of seting up  the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR][11] typee `rake vagrant:up plugin=<app>` from the PROJECT_DIRECTORY.  Once it is up type `vagrant ssh` or `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
 
-The box currently defaults to Ruby 2.1.4 but has 1.9.3 and 2.0.0 are available as well, just uncomment them from the install script.  See the file comments for further details.
+The box currently defaults to Ruby 2.1.4 but 1.9.3 and 2.0.0 are available for installation as well, just uncomment them from the install script.  See the file comments for further details.
 
 ## Testing
 
 ### Linting
 
-Only pull requests passing Rubocop will be merged.
+**Only pull requests passing Rubocop will be merged.**
 
-Rubocop is used to lint the style of the ruby plugins. This is done to standardize the style used within these plugins, and ensure high quality code.  Most [current rules][6] are currently in effect.  No linting is done on Ruby code prior to version 2x.  See the [.travis.yml][7] and [Rakefile][8] templates in GIR as they are autogenerated upon initial repo creation and may be updated at any given time.
+Rubocop is used to lint the ruby plugins. This is done to standardize the style used within these plugins and ensure high quality code.  Most [current rules][6] are in effect.  No linting is done on Ruby code prior to version 2x.  See the [.travis.yml][7] and [Rakefile][8] templates in GIR as they are autogenerated upon initial repo creation and may be updated at any given time.
 
 Ruby 1.9.2 and 1.8.7 support has been dropped, the plugins may still function with these versions but no tests will be run against them nor will code, such as hashes, be specifically written or enforced to ensure backwards compatibility.
 
@@ -101,7 +102,7 @@ rubocop:disable <rule>, <rule>
 rubocop:enable <rule>, <rule>
 {% endhighlight  %}
 
-If you use either of these methods please mention in the PR as this should be kept to an absolute minimum at times, but can be necessary, especially concerning method length and complexity.
+If you use either of these methods please mention in the PR as this should be kept to an absolute minimum, at times this can be necessary, especially concerning method length and complexity.
 
 ### Rspec
 
@@ -159,5 +160,5 @@ When working on the code if you see an issue and can't fix it right away then ta
 [8]:[https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Rakefile.erb]
 [9]:[https://github.com/sensu/sensu-plugin-spec]
 [10]:[https://github.com/orgs/sensu-plugins/people]
-[11]:[https://github.com/sensu-plugins/GIR]
+[11]:[http://sensu-plugins.github.io/development/gir]
 [12]:[https://waffle.io/sensu-plugins/sensu-plugins.github.io]
