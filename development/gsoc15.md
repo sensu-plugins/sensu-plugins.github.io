@@ -43,7 +43,12 @@ This would be a great project for someone who wants to improve their Ruby skills
 
 [Matt Jones][5] or [Artem Chernikov][6]
 
-### Task 2 Automated testing framework built around Travis using standard Ruby methods, practices, and tools
+**Proposal Guidelines**
+
+When submitting your proposal please pick one or more repos, and explain why you want to work with them and any domain specific knowledge or skills you have to help you complete the task.
+
+
+### Task: Automated testing framework built around Travis using standard Ruby methods, practices, and tools
 
 **Brief explanation:**
 
@@ -76,7 +81,12 @@ This would be a great project for someone who wants to improve their Ruby skills
 
 [Matt Jones][5] or [Artem Chernikov][6]
 
-### Task 3 A simple comprehensive directory of all monitors, handlers, and tools.
+**Proposal Guidelines**
+
+When submitting your proposal please explain your views on testing code and infrastructure along with specific knowledge or skills you have to help you complete the task.  A brief summary of your choice of tools and why you pick them should also be included.
+
+
+### Task: A simple comprehensive directory of all monitors, handlers, and tools.
 
 **Brief explanation:**
 
@@ -109,6 +119,56 @@ Guidance is available on these topics as well as examples of the types of functi
 
 [Matt Jones][5] or [Artem Chernikov][6]
 
+**Proposal Guidelines**
+
+When submitting your proposal please give some examples of previously completed web applications or programs and/or designs you are currently working on.  You should also include some sites or applications that your find inspiring and would like to incorporate into your design.  If you have no prior projects available then explain in detail how you would go about completing this task.  Previous web experience is not necessary but will be helpful.
+
+### Task: Expand monitors for a given product, platform or api
+
+**Brief explanation:**
+
+There are still lots of api's, platforms, and tools out there that have minimal or non-existent monitoring.  The student with the guidance of the mentor can pick one or several of these to write monitors and handlers, or gather metrics for.  At the outset a proper scope, dependent upon the chosen type of monitoring to be implemented, would be agreed upon by both the student and the mentor.  A partial list of topics include:
+
+* expanded monitoring of elasticsearch or other large scale data stores
+* improvements upon existing monitoring for Windows Server and Windows applications
+* platform specific monitors for BSD, VMS, etc
+* monitors and integration with various hypervisors such as KVM, QEMU, or ESX(i)
+* low level monitoring of the linux kernel using kernel probes
+* monitoring of various environmental metrics found in a datacenter, including battery performance, chasis temperature, and network latency
+* monitoring of various scada, fpga, or other embedded systems
+
+**Expected Results:**
+
+A set of completed, stable, and production grade monitors, handlers, etc that are within the scope agreed upon by the student and the mentor at the outset.  The emphsis will be on quality not quanity and all code will be written in Ruby following the [Developer Guidelines][8] for the sensu plugins.
+
+**Why Work On This:**
+
+Freedom to explore.  Pick a topic and figure out how it works, is commonly used, and fails, then effectively code ways to detect or possibly correct these failures.  A well defined scope will be created with the student to prevent chasing edge cases, feature creep, and black holes.
+
+You will get a feel for how infrastructure developers and system administrators tackle a monitoring problem and how an effective monitor is written from design to code, through to testing and production use.  You will get a chance to own the problem and create a the solution based upon your personal preferences while adhering to published Developer Guidelines.
+
+**Note** Due to the nature of this task the scope will be carefully considered and may be evaluated at specific intervals taking into account the task goals and the students learning ability.
+
+**Knowledge prerequisite:**
+
+* general Ruby knowledge or advanced knowledge of Perl/Python/<scripting language>
+* general concepts of monitoring or willingness to rapidly learn them
+* general understanding of how to define, generate, and handle exit codes and what they mean within a monitoring environment
+* must believe in and understand treating infrastructure as code, ephemeral data, and why this is necessary in a cloud environment
+* necessary domain specific knowledge of the selected topic or proven experience rapidly adapting to new technologies
+
+**Skill Level:**
+
+* beginner..advanced (depends on chosen topic)
+
+**Mentor:**
+
+[Matt Jones][5] or [Artem Chernikov][6]
+
+**Proposal Guidelines**
+
+When submitting your proposal please pick one or more topics, and explain why you want to work with them, a simple scope for the project, and any domain specific knowledge or skills you have to help you complete the task.
+
 
 [1]: http://sensu-plugins.github.io/development/gir
 [2]: https://github.com/sensu/sensu-community-plugins
@@ -117,3 +177,4 @@ Guidance is available on these topics as well as examples of the types of functi
 [5]: https://github.com/mattyjones
 [6]: https://github.com/kalabiyau
 [7]: https://github.com/sensu/sensu-plugin-spec
+[8]: http://sensu-plugins.github.io/development/guidelines.html
