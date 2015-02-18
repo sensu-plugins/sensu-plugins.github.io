@@ -91,11 +91,11 @@ When submitting your proposal please explain your views on testing code and infr
 
 **Brief explanation:**
 
-With the split of the community repo in ~150 separate repos, user may have a hard time finding a particular monitor or know that a monitor or handler for a service already exists.  There should be a directory we can point them to that will offer the functionality in a clean manner.  The directory should be updated automatically upon the release of a new gem, github tag, or repo.
+With the split of the community repo in ~150 separate repos, users may have a hard time finding a particular monitor or know that a monitor or handler for a service already exists.  There should be a directory we can point them to that will offer this functionality in a clean manner.  The directory should be updated automatically upon the release of a new gem, github tag, or repo.  Consideration will need to be given for the rate-limiting that is inherent with Github.
 
 **Expected Results:**
 
-We would like a solid design and poc of the code and tools necessary to build and maintain the directory. It need not be complete but substantial progress should have been made and it should be in a poc state with complete functionality.
+We would like a solid design and poc of the code and tools necessary to build and maintain the directory. It need not be complete but substantial progress should have been made and it should be in a poc state with complete functionality.  Current technologies in consideration are Node.js, RoR, vanilla js.
 
 **Why Work On This:**
 
@@ -108,6 +108,7 @@ Guidance is available on these topics as well as examples of the types of functi
 * general understanding of web application design
 * general knowledge of web site template engines, any would be fine but the site currently uses Jekyll/Liquid
 * good working knowledge of standard web languages such as html, css, js
+* familiarity with MVC frameworks such as Django and Rails
 * basic understanding of the necessary api's including Github, TravisCI, and RubyGems
 * basic understanding of current infrastructure automation and tooling
 * must believe in and understand treating infrastructure as code, ephemeral data, and why this is necessary in a cloud environment
@@ -122,7 +123,45 @@ Guidance is available on these topics as well as examples of the types of functi
 
 **Proposal Guidelines**
 
-When submitting your proposal please give some examples of previously completed web applications or programs and/or designs you are currently working on.  You should also include some sites or applications that your find inspiring and would like to incorporate into your design.  If you have no prior projects available then explain in detail how you would go about completing this task.  Previous web experience is not necessary but will be helpful.
+When submitting your proposal please give some examples of previously completed web applications or programs and/or designs you are currently working on.  You should also include some sites or applications that your find inspiring and would like to incorporate into your design.  If you have no prior projects available then explain in detail how you would go about completing this task.  Previous web experience is not critical but would be helpful.
+
+### Task: A tool to help user setup and configure basic monitoring for their system
+
+**Brief explanation:**
+
+With the split of the community repo in ~150 separate repos, users may have a hard time finding a particular monitor or know that a monitor or handler for a service already exists. It would be nice for a user to be able to query a db and get back a list of gems to install to monitor their system.  For example a user wants to setup baseline monitoring but has no idea what to install for gems.  They would type in baseline and get back a list of packages whose metadata matches baseline.
+
+**Expected Results:**
+
+We would like a solid design and poc of the code and tools necessary to build and maintain this. It need not be complete but substantial progress should have been made and it should be in a poc state with complete functionality.  Current technologies in consideration are Node.js and RoR.
+
+**Why Work On This:**
+
+Not much has been done on this front yet so the student would in effect have free rein with the design as long as it meets the functional requirements and the code is clean modular and stable.  This would include the ability to design the layout, pick the methods to gather the required data and select the best language and tools for the project.
+
+Guidance is available on these topics as well as examples of the types of functionality and style we are looking for.
+
+**Knowledge prerequisite:**
+
+* general understanding of web application design
+* general knowledge of web site template engines, any would be fine but the site currently uses Jekyll/Liquid
+* good working knowledge of standard web languages such as html, css, js
+* familiarity with MVC frameworks such as Django and Rails
+* basic understanding of the necessary api's including Github, TravisCI, and RubyGems
+* basic understanding of current infrastructure automation and tooling
+* must believe in and understand treating infrastructure as code, ephemeral data, and why this is necessary in a cloud environment
+
+**Skill Level:**
+
+* medium/advanced
+
+**Mentor:**
+
+[Matt Jones][5] or [Artem Chernikov][6]
+
+**Proposal Guidelines**
+
+When submitting your proposal please give some examples of previously completed web applications or programs and/or designs you are currently working on.  You should also include some sites or applications that your find inspiring and would like to incorporate into your design.  If you have no prior projects available then explain in detail how you would go about completing this task.  Previous web experience is not critical but would very be helpful.
 
 ### Task: Expand monitors for a given product, platform or api
 
