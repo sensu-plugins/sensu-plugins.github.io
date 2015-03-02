@@ -10,7 +10,7 @@ permalink: /development/guidelines.html
 
 * Please format the names of scripts using dashes to separate words and with an extension (`.rb`, `.sh`, etc), and make sure they are `chmod +x`'d. Extensions are unfortunately necessary for Sensu to be able to directly exec plugins and handlers on Windows.  There is a rake task that is run by travis that will automatically make all files in */bin* executable.
 
-* Any repos created need to follow te format of *sensu-plugins-<app>*, where *<app>* is the group name such as windows, disk-checks, or influxdb.  The exception to the rule are repos used for the site or tooling such as GIR or sensu-plugins.github.io.  This is done so that the rake tasks and other automation tools can easily parse Github and effectively work with the ~150+ repos.
+* Any repos created need to follow te format of *sensu-plugins-app*, where *app* is the group name such as windows, disk-checks, or influxdb.  The exception to the rule are repos used for the site or tooling such as GIR or sensu-plugins.github.io.  This is done so that the rake tasks and other automation tools can easily parse Github and effectively work with the ~150+ repos.
 
 ## Coding Style
 
@@ -150,15 +150,15 @@ When working on the code if you see an issue and can't fix it right away then ta
 
 * may require 8+ hours or some domain specific Ruby skills such as Amazon, or Elastic Search
 
-[1]:[https://github.com/sensu/sensu-plugin]
-[2]:[http://yardoc.org/]
-[3]:[http://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md]
-[4]:[https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Vagrantfile.erb]
-[5]:[https://www.vagrantup.com/]
-[6]:[https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/rubocop.yml.erb]
-[7]:[https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/travis.yml.erb]
-[8]:[https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Rakefile.erb]
-[9]:[https://github.com/sensu/sensu-plugin-spec]
-[10]:[https://github.com/orgs/sensu-plugins/people]
-[11]:[http://sensu-plugins.github.io/development/gir]
-[12]:[https://waffle.io/sensu-plugins/sensu-plugins.github.io]
+[1]: https://github.com/sensu/sensu-plugin
+[2]: http://yardoc.org/
+[3]: http://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md
+[4]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Vagrantfile.erb
+[5]: https://www.vagrantup.com/
+[6]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/rubocop.yml.erb
+[7]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/travis.yml.erb
+[8]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Rakefile.erb
+[9]: https://github.com/sensu/sensu-plugin-spec
+[10]: https://github.com/orgs/sensu-plugins/people
+[11]: http://sensu-plugins.github.io/development/gir
+[12]: https://waffle.io/sensu-plugins/sensu-plugins.github.io
