@@ -39,7 +39,7 @@ The production_status field gives a quick glance on whether the gem should be us
 
 If anyone else has suggestions for meaningful metadata then let someone on the team know.
 
-### FreeBSd Support...Windows Too If I Must
+### FreeBSD Support...Windows Too If I Must
 
 We have also begun doing some testing with FreeBSD and Windows.  While it has always been possible to install the sensu client there was a grey area around if checks would work as many use Linux specific commands or conventions.
 
