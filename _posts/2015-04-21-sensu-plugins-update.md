@@ -39,11 +39,11 @@ The production_status field gives a quick glance on whether the gem should be us
 
 If anyone else has suggestions for meaningful metadata then let someone on the team know.
 
-### FreeBSD Support...Windows Too If I Must
+### FreeBSD Support...Windows Too If We Must
 
-We have also begun doing some testing with FreeBSD and Windows.  While it has always been possible to install the sensu client there was a grey area around if checks would work as many use Linux specific commands or conventions.
+We have now begun doing some testing with FreeBSD and Windows.  While it has always been possible to install the sensu client there was a grey area around if checks would work as many use Linux specific commands or conventions.
 
-I am quite happy to say that much of the Linux specific code is being refactored out for Ruby specific code.  A good example of this was using df/du for the disk checks.  Several of them have been rewritten to use the [sys-filesystem](https://github.com/djberg96/sys-filesystem) gem and are confirmed to work on multiple variants of Windows Server and FreeBSD.  Shortly we will be creating platform repos for plugins related only to those platform, ala sensu-plugins-windows(https://github.com/sensu-plugins/sensu-plugins-windows).
+I am quite happy to say that much of the Linux specific code is being refactored out for Ruby specific code.  A good example of this was using df/du for the disk checks.  Several of them have been rewritten to use the [sys-filesystem](https://github.com/djberg96/sys-filesystem) gem and are confirmed to work on multiple variants of Windows Server and FreeBSD.  Shortly we will be creating platform repos for plugins related only to those platform, ala [sensu-plugins-windows](https://github.com/sensu-plugins/sensu-plugins-windows).
 
 Many other improvements are coming including documentation, a plugin directory, and most importantly, more gems.
 
