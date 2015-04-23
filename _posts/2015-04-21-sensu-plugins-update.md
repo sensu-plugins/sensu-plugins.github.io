@@ -24,17 +24,11 @@ The maintainer field can be anyone, please feel free to reach out to the team ab
 
 The development_status field allows users to know the development state of a plugin:
 
-**active**
+* **active** Active development is ongoing by a developer or maintainer
 
-Active development is ongoing by a developer or maintainer
+* **maintenance** No active refactoring or development but someone is watching out for any new pr's or things to do.
 
-**maintenance**
-
-No active refactoring or development but someone is watching out for any new pr's or things to do.
-
-**unmaintained**
-
-The community as a whole is keeping an eye on this but no one has staked a claim to it (most plugins will end up here)
+* **unmaintained** The community as a whole is keeping an eye on this but no one has staked a claim to it (most plugins will end up here)
 
 `{ 'production_status' => ''}`
 
