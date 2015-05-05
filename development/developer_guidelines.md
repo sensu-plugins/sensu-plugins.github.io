@@ -1,12 +1,12 @@
 ---
 layout: page
-#title: Developer Guidlines
+#title: Developer Guidelines
 permalink: /development/guidelines.html
 ---
 
 ## Naming Conventions
 
-* All binaries should start with either **handler**, **check**, **metrics**, **extension**, or **mutator** depending on their primary function.  This is done to ensure that a user can tell from the command what the primary action of the script is.  It also makes things eaiser for infrastructure tools.
+* All binaries should start with either **handler**, **check**, **metrics**, **extension**, or **mutator** depending on their primary function.  This is done to ensure that a user can tell from the command what the primary action of the script is.  It also makes things easier for infrastructure tools.
 
 * Please format the names of scripts using dashes to separate words and with an extension (`.rb`, `.sh`, etc), and make sure they are `chmod +x`'d. Extensions are unfortunately necessary for Sensu to be able to directly exec plugins and handlers on Windows.  There is a rake task that is run by travis that will automatically make all files in */bin* executable.
 
@@ -72,7 +72,7 @@ Dependencies (ruby gems, packages, etc) and other requirements should be declare
 
 ## Vagrant Boxes
 
-There is a [Vagrantfile][4] in each repo with shell provisioning that is capable of seting up  the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR][11] typee `rake vagrant:up plugin=<app>` from the PROJECT_DIRECTORY.  Once it is up type `vagrant ssh` or `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
+There is a [Vagrantfile][4] in each repo with shell provisioning that is capable of setting up  the major versions of Ruby using RVM and a sensu gemset for each if you wish to use it.  To get started install [Vagrant][5] then type `vagrant up` in the root directory of the repo or using [GIR][11] type `rake vagrant:up plugin=<app>` from the PROJECT_DIRECTORY.  Once it is up type `vagrant ssh` or `rake vagrant:up plugin=<app>` to remote into the box and then `cd /vagrant && bundle install` to set all necessary dependencies.
 
 The box currently defaults to Ruby 2.1.4 but 1.9.3 and 2.0.0 are available for installation as well, just uncomment them from the install script.  See the file comments for further details.
 
@@ -128,13 +128,13 @@ When submitting a pull request please follow the guidelines below for the quicke
 
 If you wish to track the status of your PR or issue, check out our [waffle.io][12].  This single location will allow contributors to stay on top of interwinding issues more effectively.  As the number of repositories grow and issues cross those bounds this will be the main organizational tool for tracking.
 
-Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to 60 days. A lack of feedback in after this may require you to re-open your pull request.  
+Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to 60 days. A lack of feedback in after this may require you to re-open your pull request.
 
 ## Technical Debt
 
 For those who don't deal with or understand technical debt, it is debt incurred when designing or developing software.  All the #FIXME, #HACK, etc littered through a script add up over time, this is your technical debt.
 
-When working on the code if you see an issue and can't fix it right away then tage it either #YELLOW, #ORANGE, or #RED based upon the below guidelines.  This will allow yourself or other to come back later when they have some available cycles.
+When working on the code if you see an issue and can't fix it right away then tag it either #YELLOW, #ORANGE, or #RED based upon the below guidelines.  This will allow yourself or other to come back later when they have some available cycles.
 
 ### Technical Debt Levels
 
