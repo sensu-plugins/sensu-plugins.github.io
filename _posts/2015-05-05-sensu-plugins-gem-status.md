@@ -12,11 +12,11 @@ First off I would like to say thanks to the other contributors who have been doi
 
 According to RubyGems, we are fast approaching 8000 downloads across 52 gems!  To give an overall idea of the current state of the organization, we have a total of 154 plugins repos and that number grows by at least 1 every week.
 
-**On July 6th, we will be freezing the original community plugins repo.**  This is only a soft freeze for the time being and allows the team to ensure everything is migrated.  On this date we will no longer accept new plugins or features to existing plugins at this location.  All new code will need to be pulled against the new codebase.  Security fixes and bug fixes will continue to be accepted for at least 60 days, as will any issues related to these topics.
+**On July 6th, we will be freezing the original community plugins repo.**  This is only a soft freeze and allows the team time to ensure everything is migrated.  On this date we will no longer accept new plugins or features to existing plugins at this location, all new code will need to be pulled against the new codebase.  Security fixes and bug fixes will continue to be accepted for at least 60 days, as will any issues related to these topics.
 
-The procedure fo PR's will remain nearly identical, only a small change will be needed.  If your code already has a home, or where you think it should live then submit a PR against that repo.  If you are unsure of where it should go, you can either reach out via email or Twitter or submit a PR against the [feature-requests](https://goo.gl/53yu2I) repo.
+The procedure for PR's will remain nearly identical, only a small change will be needed.  If your code already has a home, or where you think it should live then submit a PR against that repo.  If you are unsure of where it should go, you can either reach out via email or Twitter or submit a PR against the [feature-requests](https://goo.gl/53yu2I) repo.
 
-At this time I expect all plugins to be built into stable gems by the above date.  We currently a CI/CD pipeline setup using Codeship and it appears to be working great and will go a long way towards ensuring stability.  For those interested in this pipeline [Tom Servo](https://github.com/sensu-plugins/tom_servo) can help.
+At this time I expect all plugins to be built into stable gems by the above date.  We currently have a CI/CD pipeline setup using Codeship and it appears to be working great and will go a long way towards ensuring stability.  For those interested in this pipeline [Tom Servo](https://github.com/sensu-plugins/tom_servo) can help.
 
 I stress, at no point will the community plugins repo be removed.  After the team **and the community** are happy with the state of the new organization, the community plugins repo will be archived and any open issues of importance will be migrated.
 
