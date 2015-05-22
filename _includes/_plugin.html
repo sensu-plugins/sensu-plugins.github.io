@@ -16,8 +16,31 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
               <p>
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a>
-            </div>
               </p>
+            </div>
             {% endfor %}
         </div>
     </div>
+
+
+    <div class="container">
+            <div class="row">
+              <% @repo_data.each do |l| %>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <% if l['last_build_state'] == 'passed' %>
+                    <p class="pass">
+                    <b><%= l['repo'] %> </b><br />
+                    <%= l['description'] %> <br />
+                    Latest Stable Release: <a href="https://github.com/sensu-plugins/sensu-plugins-disk-checks/blob/master/CHANGELOG.md"><%= l['version'] %></a>
+                    </p>
+                  <% elsif l['last_build_state'] == 'errored' %>
+                    <p class="error">
+                    <b><%= l['repo'] %> </b><br />
+                    <%= l['description'] %> <br />
+                    Latest Stable Release: <a href="https://github.com/sensu-plugins/sensu-plugins-disk-checks/blob/master/CHANGELOG.md"><%= l['version'] %></a>
+                    </p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+        </div>
