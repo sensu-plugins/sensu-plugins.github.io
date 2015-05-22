@@ -17,13 +17,13 @@
       border-color: red;
     }
 </style>
-    ## Available Plugins
+    <h2>Available Plugins</h2>
     <div class="container">
         <div class="row">
           {% for repository in site.github.public_repositories %}
             <div class="col-sm-6 col-md-4 col-lg-3">
               <a href="repository.html_url">repository.name</a>
             </div>
-            <% endfor %>
+            {% endfor %}
         </div>
     </div>
