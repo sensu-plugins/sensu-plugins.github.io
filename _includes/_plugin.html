@@ -1,7 +1,10 @@
 <style type="text/css">
 
     p{
-      padding: 70px 20px;
+      padding-top: 70px;
+      padding-right: 20px;
+      padding-bottom: 70px;
+      padding-left: 20px;
       text-align: center;
       background: #f2f2f2;
       border-style: groove;
@@ -21,18 +24,3 @@
             {% endfor %}
         </div>
     </div>
-
-
-    <div class="container">
-            <div class="row">
-              <% @repo_data.each do |l| %>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <p class="pass">
-                    <b><%= l['repo'] %> </b><br />
-                    <%= l['description'] %> <br />
-                    Latest Stable Release: <a href="https://github.com/sensu-plugins/sensu-plugins-disk-checks/blob/master/CHANGELOG.md"><%= l['version'] %></a>
-                    </p>
-                </div>
-              <% end %>
-            </div>
-        </div>
