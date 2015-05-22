@@ -14,3 +14,7 @@ gem install <gem> -P MediumSecurity
 {% endhighlight %}
 
 You can also download the key from */certs/* within each repository.
+
+{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
