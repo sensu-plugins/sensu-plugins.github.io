@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+  {% include _head.html %}
 
   <body>
 
-    {% include header.html %}
+    {% include _header.html %}
+    {% if page.tag == 'home_page' %}
+
+    {{ content}}
+
+    {% else %}
 
     <div class="page-content">
       <div class="wrapper">
@@ -13,7 +18,9 @@
       </div>
     </div>
 
-    {% include footer.html %}
+    {% endif %}
+
+    {% include _footer.html %}
 
   </body>
 

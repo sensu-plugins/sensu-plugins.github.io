@@ -1,4 +1,4 @@
-<header class="site-header">
+<!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -24,4 +24,22 @@
 
   </div>
 
-</header>
+</header> -->
+
+
+<!-- <body> -->
+    <ul class="nav nav-tabs">
+      <li> <a href="{{ site.baseurl }}/">{{ site.title }}</a> </li>
+      {% for page in site.pages %}
+        {% if page.title %}
+        <li> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> </li>
+        {% endif %}
+      {% endfor %}
+        <!-- <li class="active"><a href="/">Home</a></li>
+        <li><a href="/plugins">Plugins</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/documentation">Documentation</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="/development/index">Development</a></li>
+        <li><a href="/news">News</a></li> -->
+    </ul>
