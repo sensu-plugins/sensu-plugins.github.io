@@ -1,5 +1,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
+<script src="https://cdn.rawgit.com/jprichardson/string.js/master/lib/string.min.js"></script>
+
 <style type="text/css">
+
 
 .item { background: #f2f2f2; width: 20%; border: 3px; text-align: center; border-style: groove; margin: 5px}
 
@@ -10,7 +13,6 @@
 
 <div id="container" class="js-masonry"
 data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
-    <div class="row">
       {% for repository in site.github.public_repositories %}
           {% if site.exclude_repos contains repository.name %}
           {% else %}
@@ -20,7 +22,7 @@ data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
             </div>
           {% endif %}
         {% endfor %}
-    </div>
+  
 </div>
 
 <!-- <div id="container" class="js-masonry"
