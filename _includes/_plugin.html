@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
           {% for repository in site.github.public_repositories %}
-              {% if site.exclude_repos !contains repository %}
+              {% if site.exclude_repos contains repository %}
               {% else %}
                 <div class="col-sm-6 col-md-4 col-lg-3">
                   <p class="plugin">
