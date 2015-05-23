@@ -3,9 +3,6 @@ layout: default
 ---
 <div class="post">
 
-  {% if page.tag == 'no_title' %}
-  {{ content }}
-  {% else %}
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
@@ -13,7 +10,5 @@ layout: default
   <article class="post-content">
     {{ content }}
   </article>
-
-  {% endif %}
 
 </div>
