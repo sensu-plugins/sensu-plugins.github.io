@@ -18,7 +18,10 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
               <p class="plugin">
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
-                {{ repository.description }}
+                {{ repository.description }} <br />
+                {{ site.github.releases.latest }} <br />
+                {{ site.github.releases.latest.browser_download_url }} <br />
+
               </p>
             </div>
             {% endfor %}
