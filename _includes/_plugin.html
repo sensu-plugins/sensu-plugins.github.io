@@ -1,14 +1,14 @@
 <style type="text/css">
 
     p.plugin{
-      padding-top: 80px;
+      padding-top: 70px;
       padding-right: 15px;
-      padding-bottom: 80px;
+      padding-bottom: 70px;
       padding-left: 15px;
       text-align: center;
       background: #f2f2f2;
-      border-style: groove;
-      border-width: 5px;
+      /*border-style: groove;*/
+      border-width: 2px;
       border-color: black;
     }
 </style>
@@ -17,7 +17,7 @@
           {% for repository in site.github.public_repositories %}
               {% if site.exclude_repos contains repository.name %}
               {% else %}
-                <div class="col-lg-3">
+                <div class="col-sm-6 col-md-4 col-lg-3">
                   <p class="plugin">
                     <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
                     {{ repository.description }} <br />
