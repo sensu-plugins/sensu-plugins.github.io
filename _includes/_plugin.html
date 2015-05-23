@@ -16,7 +16,7 @@
         <div class="row">
           {% for repository in site.github.public_repositories %}
             {% for repo in site.exclude_repos %}
-              {% if repo != repository %}
+              {% if repository != repo %}
                 <div class="col-sm-6 col-md-4 col-lg-3">
                   <p class="plugin">
                     <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
