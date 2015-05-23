@@ -1,8 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
-<script src="https://cdn.rawgit.com/jprichardson/string.js/master/lib/string.min.js"></script>
 
 <style type="text/css">
-
 
 .item { background: #f2f2f2; width: 20%; border: 3px; text-align: center; border-style: groove; margin: 5px}
 
@@ -19,24 +17,9 @@ data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
             <div class="item">
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
                 {{ repository.description }} <br />
+                {{ repository.releases }}
             </div>
           {% endif %}
         {% endfor %}
-  
-</div>
 
-<!-- <div id="container" class="js-masonry"
-data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
-    <div class="item">foo<br>bar</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply<br>waldo<br>fred<br>plugh<br>xyzzy<br>thud</div>
-    <div class="item">foo<br>bar</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply<br>waldo<br>fred</div>
-    <div class="item">foo<br>bar<br>baz<br>qux</div>
-    <div class="item">foo<br>bar<br>baz</div>
-    <div class="item">foo<br>bar<br>baz</div>
-    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
-</div> -->
+</div>
