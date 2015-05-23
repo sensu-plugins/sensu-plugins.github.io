@@ -1,10 +1,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
 <style type="text/css">
 
-
-    /* Style */
 .item { background: #f2f2f2; width: 20%; border: 5px solid black; text-align: center; border-style: groove; margin: 10px}
-/* Position */
+
 .container {
     width: 200px;
 }
@@ -20,10 +18,8 @@ data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
           {% if site.exclude_repos contains repository.name %}
           {% else %}
             <div class="item">
-              <p class="plugin">
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
                 {{ repository.description }} <br />
-              </p>
             </div>
           {% endif %}
         {% endfor %}
