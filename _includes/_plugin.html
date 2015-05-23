@@ -17,9 +17,10 @@ data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
             <div class="item">
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
                 {{ repository.description }} <br />
+                {{ site.github.releases.tag_name }} <br />
                 {% for release in site.github.releases %}
                   {{ release.tag_name }}<br />
-                  {% endfor %}
+                {% endfor %}
             </div>
           {% endif %}
         {% endfor %}
