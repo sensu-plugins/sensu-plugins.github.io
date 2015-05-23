@@ -14,6 +14,7 @@
 </style>
 {% assign name = ["GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io"] %}
     <div class="container">
+      {{ name }}
         <div class="row">
           {% for repository in site.github.public_repositories %}
               {% if name contains repository %}
