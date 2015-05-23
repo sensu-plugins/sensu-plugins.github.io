@@ -1,34 +1,47 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
 <style type="text/css">
 
-    p.plugin{
-      /*padding-top: 70px;
-      padding-right: 15px;
-      padding-bottom: 70px;
-      padding-left: 15px;*/
-      margin: 20px;
-      padding-top: 10%;
-      padding-right: 5%;
-      padding-bottom: 15%;
-      padding-left: 5%;
-      text-align: center;
-      background: #f2f2f2;
-      border-style: groove;
-      border-width: 2px;
-      border-color: black;
-    }
+
+    /* Style */
+.item { background: yellow; width: 48px; border: 1px solid black; }
+.item:nth-child(2n) { background: blue; }
+.item:nth-child(3n) { background: red; }
+
+/* Position */
+.container {
+    width: 200px;
+}
 </style>
-    <div class="container">
-        <div class="row">
-          {% for repository in site.github.public_repositories %}
-              {% if site.exclude_repos contains repository.name %}
-              {% else %}
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <p class="plugin">
-                    <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
-                    {{ repository.description }} <br />
-                  </p>
-                </div>
-              {% endif %}
-            {% endfor %}
-        </div>
+
+<div id="container" class="js-masonry"
+data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
+    <div class="row">
+      {% for repository in site.github.public_repositories %}
+          {% if site.exclude_repos contains repository.name %}
+          {% else %}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <p class="plugin">
+                <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
+                {{ repository.description }} <br />
+              </p>
+            </div>
+          {% endif %}
+        {% endfor %}
     </div>
+</div>
+
+<!-- <div id="container" class="js-masonry"
+data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
+    <div class="item">foo<br>bar</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply<br>waldo<br>fred<br>plugh<br>xyzzy<br>thud</div>
+    <div class="item">foo<br>bar</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge<br>grault<br>garply<br>waldo<br>fred</div>
+    <div class="item">foo<br>bar<br>baz<br>qux</div>
+    <div class="item">foo<br>bar<br>baz</div>
+    <div class="item">foo<br>bar<br>baz</div>
+    <div class="item">foo<br>bar<br>baz<br>qux<br>quux<br>corge</div>
+</div> -->
