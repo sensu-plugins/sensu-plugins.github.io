@@ -34,3 +34,5 @@ kramdown:
 gems:
   - jekyll-sitemap
   - jekyll-mentions
+
+exclude_repos: ["GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io"]
