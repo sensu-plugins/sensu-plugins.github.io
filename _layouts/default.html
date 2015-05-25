@@ -6,7 +6,7 @@
   <body>
 
     {% include _header.html %}
-    {% if page.tag == 'full_width' %}
+    {% if page.tag contains 'full_width' %}
 
     {{ content}}
 
