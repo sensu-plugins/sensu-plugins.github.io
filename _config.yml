@@ -35,4 +35,8 @@ gems:
   - jekyll-sitemap
   - jekyll-mentions
 
+collections:
+  docs:
+    output: true
+
 exclude_repos: ["GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io"]

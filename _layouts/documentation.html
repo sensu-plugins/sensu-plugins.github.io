@@ -11,3 +11,7 @@ layout: default
     {{ content }}
 
 </div>
+
+{% for d in site.docs %}
+  {{ d.title }}
+  {% endfor %}
