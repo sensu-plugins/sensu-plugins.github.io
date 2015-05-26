@@ -4,24 +4,51 @@
   {% include _head.html %}
 
   <body>
-
-    {% include _header.html %}
     {% if page.tag contains 'full_width' %}
+      {% include _header.html %}
+      {{ content}}
+      {% include _footer.html %}
 
-    {{ content}}
+    {% elsif page.layout == 'documentation'%}
+    {% include _sidebar.html %}
+    <div class="wrap">
+        {% include _header.html %}
+        <div class="container content">
+          {{ content }}
+          {% include _footer.html %}
+        </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
 
     {% else %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+      {% include _header.html %}
+      <div class="page-content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
       </div>
-    </div>
+      {% include _footer.html %}
 
     {% endif %}
 
-    {% include _footer.html %}
-
   </body>
-
 </html>
