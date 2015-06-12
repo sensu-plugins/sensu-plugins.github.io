@@ -174,12 +174,12 @@ There are still lots of api's, platforms, and tools out there that have minimal 
 * platform specific monitors for BSD, VMS, etc
 * monitors and integration with various hypervisors such as KVM, QEMU, or ESX(i)
 * low level monitoring of the linux kernel using kernel probes
-* monitoring of various environmental metrics found in a datacenter, including battery performance, chasis temperature, and network latency
+* monitoring of various environmental metrics found in a datacenter, including battery performance, chassis temperature, and network latency
 * monitoring of various scada, fpga, or other embedded systems
 
 **Expected Results:**
 
-A set of completed, stable, and production grade monitors, handlers, etc that are within the scope agreed upon by the student and the mentor at the outset.  The emphsis will be on quality not quanity and all code will be written in Ruby following the [Developer Guidelines][8] for the sensu plugins.
+A set of completed, stable, and production grade monitors, handlers, etc that are within the scope agreed upon by the student and the mentor at the outset.  The emphasis will be on quality not quantity and all code will be written in Ruby following the [Developer Guidelines][8] for the sensu plugins.
 
 **Why Work On This:**
 
