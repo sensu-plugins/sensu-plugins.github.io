@@ -1,0 +1,148 @@
+---
+layout: documentation
+# permalink:
+title: Development Guidleines
+categories: Development
+tags:
+  - no_menu
+---
+
+# Sensu-Plugin Developer Guidelines
+
+**Table of Contents**
+
+- [Naming Conventions](#naming-conventions)
+- [Coding Style](#coding-style)
+- [Copyright and Licensing](#copyright-and-licensing)
+- [Documentation](#documentation)
+	- [Changelog](#changelog)
+- [Dependency Management](#dependency-management)
+- [Issue and Pull Request Submissions](#issue-and-pull-request-submissions)
+- [Gem Metadata](#gem-metadata)
+- [Additional Information](#additional-information)
+
+## Naming Conventions
+- All binaries should start with either **handler**, **check**, **metrics**, **extension**, or **mutator** depending on their primary function.  This is done to ensure that a user can tell from the command what the primary action of the script is.  It also makes things easier for infrastructure tools.
+- The name's of scripts should use dashes to separate words and contain an extension (`.rb`, `.sh`, etc).  Extensions are unfortunately necessary for Sensu to be able to directly exec plugins and handlers on Windows.  All scripts should also be made executable using `chmod +x plugin` or a similar method.  There is a rake task that is run by Travis that will automatically make all files in _/bin_ executable if this is not done.
+- Any repos created need to follow the format of _sensu-plugins-app_, where _app_ is the group name such as windows, disk-checks, or influxdb.  The exception to the rule are repos used for the site or tooling such as GIR or sensu-plugins.github.io.  This is done so that the rake tasks and other automation tools can easily parse Github and effectively work with the ~150+ repos.
+
+## Coding Style
+- When developing plugins please use the [sensu plugin class][1], this ensures all plugins have an identical run structure.
+- When using options please use the following structure.  At the very least the option needs to include a description to assist the user with configuration and deployment.
+
+```ruby
+option :port,
+short: '-p PORT',
+long: '--port PORT',
+description: 'Port',
+default: '1234'
+```
+
+- Each script should use the following standard header:
+
+```ruby
+#! /usr/bin/env ruby
+#
+#   <script name>
+#
+# DESCRIPTION:
+#
+# OUTPUT:
+#   plain text, metric data, etc
+#
+# PLATFORMS:
+#   Linux, Windows, BSD, Solaris, etc
+#
+# DEPENDENCIES:
+#   gem: sensu-plugin
+#   gem: <?>
+#
+# USAGE:
+#
+# NOTES:
+#
+# LICENSE:
+#   <your name>  <your email>
+#   Released under the same terms as Sensu (the MIT license); see LICENSE
+#   for details.
+#
+```
+
+## Copyright and Licensing
+The preferred license for all code associated with the project is the [MIT License][15], other compatible licenses can certainly be looked at by the community as whole.
+
+Any code that is written is owned by the developer and as such the copyright, if they desire, should be set to themselves.  This is an open source project and built upon the collective code of all who contribute, no one person or entity owns everything.  If for whatever reason they wish to not assign copyright to themselves then it can be assigned to _sensu-plugins_
+
+## Documentation
+All documentation will be handled by [Yard][2] using the default markup at this time. A brief introduction to Yard markup can be found [here][3]. All scripts should have as much documentation coverage as possible, ideally 100%.  Coverage can be tested by installing Yard locally and running
+
+```bash
+rake yard
+```
+
+### Changelog
+The change log should follow the format listed [here](http://keepachangelog.com/).
+
+## Dependency Management
+Dependencies (ruby gems, packages, etc) and other requirements should be declared in the header of the plugin.  Try to use the standard library or the same dependencies as other plugins to keep the stack as small as possible.  Questions about using a specific gem feel can be opened as issues on Github or feel free to ask the mailing list.
+
+## Issue and Pull Request Submissions
+If you see something wrong or come across a bug please open up an issue, try to include as much data in the issue as possible.  If you feel the issue is critical than tag a team member and we will respond as soon as is feasible.
+
+Pull request should follow the guidelines below for the quickest possible merge.  These not only make our lives easier, but also keep the repo and commit history as clean as possible.
+- When at all possible do a  `git pull --rebase` both before you start working on the repo and then before you commit.  This will help ensure the most up to date codebase, Rubocop rules, and documentation is available.  It will also go along way towards cutting down or eliminating(hopefully) annoying merge commits.
+
+Tracking the status of your PR or issue, or seeing all open tickets in the org regardless of repo is simple using Github [filters][16].  To get started click on the Github logo in the upper left and select either _Pull Requests_ or _Issues_.  In the search box you will see several terms predefined for you, change **author:name** to **user:sensu-plugins** to see across the entire org.
+
+Please do not not abandon your pull request, only you can help us merge it. We will wait for feedback from you on your pull request for up to sixty days. A lack of feedback in after this may require you to re-open your pull request.  
+
+## Gem Metadata
+Each gem has metadata that can easily be queried and is designed to allow a user or contributor to get a good quick read on the current status of the gem and how stable it is.  This functions much like the Milestone idea that Logstash plugins are built around, thanks goes out to @hatt for suggesting this.  
+
+`s.metadata = { 'maintainer' => ''}`
+
+The maintainer field can be anyone, feel free to reach out to the team about adding your github handle to the gem and assuming 'ownership' of it.  Many of these plugins require specialized knowledge and by their very nature many people depend upon them to be high quality.
+
+`s.metadata               = { 'development_status' => ''}`
+
+The development_status filed allows users know the development state of a plugin:
+
+**active** => active development is on going by a developer or maintainer
+
+**maintenance** => no active refactoring or development but someone is watching out for any new pr's or things to do.
+
+**unmaintained** => the community as a whole is keeping an eye on this but no one has staked a claim to it (most plugins will end up here)
+
+`s.metadata = { 'production_status' => ''}`
+
+The production_status field gives a quick glance on whether the gem should be used for production grade monitoring or if some review and care should be taken.
+
+**production grade** => near 100% rspec and yardoc coverage
+
+**stable - review recommended** => incomplete rspec and yardoc coverage
+
+**stable - review required** => little/no rspec and/or yardoc coverage
+
+**unstable - testing recommended** => throw stuff at the wall and hope it sticks (currently most gems are here)
+
+### Additional Information
+[Testing](../infra/testing.md) [Build and Release Tools and Pipeline](../infra/b_and_r.md)
+
+[1]: https://github.com/sensu/sensu-plugin
+[2]: http://yardoc.org/
+[3]: http://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md
+[4]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Vagrantfile.erb
+[5]: https://www.vagrantup.com/
+[6]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/rubocop.yml.erb
+[7]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/travis.yml.erb
+[8]: https://github.com/sensu-plugins/GIR/blob/master/files/templates/gem/Rakefile.erb
+[9]: https://github.com/sensu/sensu-plugin-spec
+[10]: https://github.com/orgs/sensu-plugins/people
+[11]: http://sensu-plugins.github.io/development/gir
+[12]: https://waffle.io/sensu-plugins/sensu-plugins.github.io
+[13]: https://github.com/sensu-plugins/documentation
+[14]: https://github.com/sensu-plugins/documentation/blob/master/tools/gir_v2.md
+[15]: http://opensource.org/licenses/MIT
+[16]: https://help.github.com/articles/searching-issues/
+[17]: https://codeship.com/
+[18]: https://travis-ci.org/
