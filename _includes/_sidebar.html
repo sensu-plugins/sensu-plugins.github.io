@@ -3,12 +3,17 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <nav class="sidebar-nav">
-    {% for node in site.docs %}
-      {% if node.title != null %}
-        {% if node.layout == "documentation" %}
-          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+    {% for doc_cat in site.doc_cat %}
+      {{ doc_cat }}
+      {% for node in site.docs %}
+        {% if node.title != null %}
+          {% if node.layout == "documentation" %}
+	    {% if node.doc_cat contains doc_cat %}
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+	    {% endif %}
+	  {% endif %}
         {% endif %}
-      {% endif %}
+      {% endfor %}
     {% endfor %}
   </nav>
 </div>

@@ -2,7 +2,8 @@
 layout: documentation
 # permalink:
 title: Development Guidleines
-categories: Development
+doc_cat:
+  - Development
 tags:
   - no_menu
 ---

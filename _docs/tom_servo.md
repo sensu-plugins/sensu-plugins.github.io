@@ -2,7 +2,8 @@
 layout: documentation
 # permalink:
 title: Deployment Tools
-categories: Development
+doc_cat:
+  - Development
 tags:
   - no_menu
 ---

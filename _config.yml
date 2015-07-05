@@ -31,12 +31,14 @@ kramdown:
   enable_coderay: false
   input: GFM
 
+doc_cat: ["Overview", "Development", "Infrastructure", "User"]
+
 gems:
   - jekyll-sitemap
   - jekyll-mentions
-
+  - jekyll-redirect-from
 collections:
   docs:
     output: true
 
-exclude_repos: ["GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io"]
+exclude_repos: ["GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io", "mulder", "scully" ]

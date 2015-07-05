@@ -1,8 +1,9 @@
 ---
 layout: documentation
 # permalink:
-title: Sensu Plugins Installation Instructions
-categories: Installation
+title: Installation Instructions
+doc_cat:
+  - User
 tags:
   - no_menu
 ---
