@@ -17,7 +17,7 @@ Installing via gem is the preferred method it one exists.
 
 **Standard Installation**
 
-`gem install sensu-plugin-disk-checks`
+`gem install sensu-plugins-disk-checks`
 
 **Secure Installation**
 
@@ -48,7 +48,7 @@ end
 
 Using the Chef **package** resource
 ```
-package 'sensu-plugins-disk-checks' do
+gem_package 'sensu-plugins-disk-checks' do
   version '0.0.1'
 end
 ```
@@ -64,3 +64,4 @@ Depending on ruby environment you may need to call ruby directly
 `/opt/sensu/embedded/bin/ruby check-disk-usage.rb -w 80 -c 90`
 
 For details check the header file of a given plugin.
+
