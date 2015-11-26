@@ -443,7 +443,7 @@ csmall2 {
     font-weight: 400;
 }
 
-.plugincontainer > h3 > a {
+.plugincontainer > p > h3 > a {
     color: white;
 }
 
