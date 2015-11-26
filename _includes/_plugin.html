@@ -1,20 +1,10 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
-<style type="text/css">
-
-.item { background: #f2f2f2; width: 20%; border: 3px; text-align: center; border-style: groove; margin: 5px}
-
-.container {
-    width: 200px;
-}
-</style>
-
-<div id="container" class="js-masonry"
-data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
-      {% for repository in site.github.public_repositories %}
-          {% if site.exclude_repos contains repository.name %}
-          {% else %}
-            <div class="item">
+<div id="Container">
+    {% for repository in site.github.public_repositories %}
+        {% if site.exclude_repos contains repository.name %}
+        {% else %}
+            <div class="mix {{ site.github.releases.repository.tag_name }}" data-myorder="2">
                 <a href="{{ repository.html_url }}">{{ repository.name }} </a><br />
                 {{ repository.description }} <br />
                 {{ site.github.releases.repository.tag_name }} <br />
@@ -22,7 +12,6 @@ data-masonry-options='{ "columnWidth": 50, "itemSelector": ".item" }'>
                   {{ release.tag_name }}<br />
                 {% endfor %}
             </div>
-          {% endif %}
-        {% endfor %}
-
+        {% endif %}
+    {% endfor %}
 </div>
