@@ -1,6 +1,5 @@
 ---
 layout: page
-# permalink:
 title: Testing
 doc_cat:
   - Development

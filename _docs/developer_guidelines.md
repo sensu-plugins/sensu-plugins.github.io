@@ -1,11 +1,9 @@
 ---
 layout: page
-title: Development Guidleines
+title: Developer Guidelines
 doc_cat:
   - Development
 ---
-
-# Sensu-Plugin Developer Guidelines
 
 **Table of Contents**
 

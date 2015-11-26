@@ -15,7 +15,7 @@ tag: full_width
                 <script type="text/javascript" src="https://asciinema.org/a/14734.js" id="asciicast-14734" async></script>
             </div>
             <div class="col-lg-8 col-lg-offset-2">
-                <h4>Popular plugins:
+                <h5>Popular plugins:
                     <a href="https://github.com/sensu-plugins/sensu-plugins-cpu-checks" style="color: white; text-decoration: underline;">CPU</a>,
                     <a href="https://github.com/sensu-plugins/sensu-plugins-memory-checks" style="color: white; text-decoration: underline;">Memory</a>,
                     <a href="https://github.com/sensu-plugins/sensu-plugins-disk-checks" style="color: white; text-decoration: underline;">Disk</a>, and
@@ -31,7 +31,7 @@ tag: full_width
                     <a href="https://github.com/sensu-plugins/sensu-plugins-http" style="color: white; text-decoration: underline;">HTTP requests</a> and many more...
                     <br>
                     <br>
-                </h4>
+                </h5>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@ tag: full_width
 
 <div class="container mtb">
     <div class="row">
-        <div class="col-lg-5 col-lg-offset-1">
+        <div class="col-lg-4">
             <h4>About Sensu Plugins</h4>
             <p>
                 This project contains plugins, handlers, mutators and other code to maximize the effective use of Sensu in various types of auto-scaling and traditional environments. Most of them are implemented in Ruby and use the sensu-plugin gem.
@@ -52,12 +52,17 @@ tag: full_width
             <a href="about/" class="btn btn-theme">More Info</a>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <h4>Latest Blog Posts</h4>
             <div class="hline"></div>
             {% for post in site.posts limit:6 %}
             <p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
             {% endfor %}
+        </div>
+
+        <div class="col-lg-4">
+            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/sensu" data-widget-id="669799643618914305">Tweets by @sensu</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
 
     </div><! --/row -->
@@ -67,12 +72,12 @@ tag: full_width
     <div class="container centered">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <i class="fa fa-comment-o"></i>
+                <i class="fa fa-quote-right"></i>
                 <p>
-                    "DCFT being an financial exchange, we need to meet stringent SLA's, Sensu helps us manage our infrastructure and monitor our performance targets. Deploying Sensu and
+                    "With DCFT being a financial exchange, we need to meet stringent SLA's. Sensu helps us manage our infrastructure and monitor our performance targets. Deploying Sensu and
                     various plugins over our 70+ node large cluster helps us maintain 99.99% uptime and measure API and trading engine latencies."
                 </p>
-                <h4><br/>Mathias Bogaert, VP of Technical Operations, DCFT</h4>
+                <h5><strong>Mathias Bogaert, VP of Technical Operations, DCFT</strong></h5>
                 <h5>&nbsp;</h5>
             </div>
         </div><! --/row -->
