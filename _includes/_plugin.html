@@ -1,4 +1,3 @@
-<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
 <div id="plugincontainer" class="plugincontainer">
     {% for repository in site.github.public_repositories %}
@@ -6,21 +5,25 @@
         {% else %}
             <div class="mix {{ site.github.releases.repository.tag_name }}" data-name="{{ repository.name }}" data-stars="{{ repository.stargazers_count}}" data-watchers="{{ repository.watchers_count }}" data-openissues="{{ repository.open_issues_count }}" data-size="{{ repository.size }}">
                 <p>
-                <h3><a href="{{ repository.html_url }}">{{ repository.name }}</a> <a class="github-button" href="{{ repository.html_url }}" data-icon="octicon-star" data-count-href="/sensu-plugins/{{ repository.name }}/stargazers" data-count-api="/repos/sensu-plugins/{{ repository.name }}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sensu-plugins/{{ repository.name }} on GitHub">Star</a></h3>
+                <h3><a href="{{ repository.html_url }}">{{ repository.name }}</a></h3>
                 <h5>{{ repository.description }}</h5>
                 {{ site.github.releases.repository.tag_name }}<br />
-                {% for release in site.github.releases %}
+                {% for release in repository.github.releases %}
                   {{ release.tag_name }}<br />
                 {% endfor %}
-
                 </p>
             </div>
         {% endif %}
     {% endfor %}
 </div>
 
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#plugincontainer').mixItUp();
+        $('#plugincontainer').mixItUp({
+            animation: {
+                duration: 1000
+            }
+        });
     });
 </script>
