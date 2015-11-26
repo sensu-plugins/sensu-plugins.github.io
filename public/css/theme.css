@@ -56,6 +56,7 @@ a:focus {
     text-shadow:none;
     background:#2B2E31;
 }
+
 ::selection {
     color: #fff;
     text-shadow:none;
@@ -409,10 +410,10 @@ csmall2 {
 }
 
 .plugincontainer {
-    padding: 2% 2% 0;
+    padding: 2% 0 0;
     text-align: justify;
     font-size: 0.1px;
-    background: #68b8c4;
+    background: #FFFFFF;
 
     -webkit-backface-visibility: hidden;
 }
@@ -431,24 +432,19 @@ csmall2 {
 
 .plugincontainer .mix {
     text-align: left;
-    background: #03899c;
+    background: #00b3fe;
     margin-bottom: 1%;
+    padding: 5px;
     display: none;
 }
 
-.plugincontainer .mix:after {
+.plugincontainer h3, h5 {
     color: white;
-    font-size: 16px;
-    display: inline-block;
-    vertical-align: top;
-    padding: 4% 6%;
-    font-weight: 700;
+    font-weight: 400;
 }
 
-.plugincontainer .mix:before {
-    content: '';
-    display: inline-block;
-    padding-top: 60%;
+.plugincontainer > h3 > a {
+    color: white;
 }
 
 @media all and (min-width: 420px) {

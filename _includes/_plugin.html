@@ -5,12 +5,14 @@
         {% if site.exclude_repos contains repository.name %}
         {% else %}
             <div class="mix {{ site.github.releases.repository.tag_name }}" data-name="{{ repository.name }}">
-                <a href="{{ repository.html_url }}">{{ repository.name }}</a><br />
-                <p>{{ repository.description }}</p><br />
+                <p>
+                <h3><a href="{{ repository.html_url }}">{{ repository.name }}</a></h3>
+                <h5>{{ repository.description }}</h5>
                 {{ site.github.releases.repository.tag_name }}<br />
                 {% for release in site.github.releases %}
                   {{ release.tag_name }}<br />
                 {% endfor %}
+                </p>
             </div>
         {% endif %}
     {% endfor %}
