@@ -195,7 +195,7 @@ a:focus {
     text-align: center;
 }
 
-#headerwrap h3, h5 {
+#headerwrap h3, h4, h5 {
     color: white;
     font-weight: 400;
 }
@@ -406,4 +406,8 @@ csmall2 {
 .share i {
     padding-right: 15px;
     font-size: 18px;
+}
+
+#Container .mix{
+    display: none;
 }
