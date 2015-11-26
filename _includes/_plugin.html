@@ -1,6 +1,6 @@
 <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
-<div id="Container">
+<div id="plugincontainer">
     {% for repository in site.github.public_repositories %}
         {% if site.exclude_repos contains repository.name %}
         {% else %}
@@ -15,3 +15,9 @@
         {% endif %}
     {% endfor %}
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#plugincontainer').mixItUp();
+    });
+</script>
