@@ -190,7 +190,7 @@ a:focus {
 #headerwrap {
     background-color: #00b3fe;
     min-height: 550px;
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 0px;
     text-align: center;
 }
@@ -202,7 +202,7 @@ a:focus {
 
 #headerwrap h1 {
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 #headerwrap .img-responsive {
