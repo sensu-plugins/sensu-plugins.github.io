@@ -8,7 +8,7 @@
                 <h3><a href="{{ repository.html_url }}">{{ repository.name }}</a></h3>
                 <h5>{{ repository.description }}</h5>
                 {{ site.github.releases.repository.tag_name }}<br />
-                {% for release in repository.github.releases %}
+                {% for release in repository.releases %}
                   {{ release.tag_name }}<br />
                 {% endfor %}
                 </p>
