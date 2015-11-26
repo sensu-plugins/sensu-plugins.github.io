@@ -1,11 +1,9 @@
 ---
-layout: documentation
+layout: page
 # permalink:
 title: Build And Release Pipeline
 doc_cat:
   - Development
-tags:
-  - no_menu
 ---
 
 ## Build and Release Pipeline

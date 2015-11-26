@@ -1,11 +1,9 @@
 ---
-layout: documentation
+layout: page
 # permalink:
 title: Installation Instructions
 doc_cat:
   - User
-tags:
-  - no_menu
 ---
 
 

@@ -1,11 +1,9 @@
 ---
-layout: documentation
+layout: page
 # permalink:
 title: Sensu Plugins Roadmap
 doc_cat:
   - Development
-tags:
-  - no_menu
 ---
 ## Sensu Plugins GSoC 2015 Ideas
 

@@ -4,14 +4,58 @@ title: Home
 tag: full_width
 ---
 
-<!-- <div class="home"> -->
-  <div class="jumbotron">
+<div id="headerwrap">
     <div class="container">
-      <h1>Sensu Plugins</h1>
-      <p>Here you will find example plugins, handlers and additional code to maximize the effective use of Sensu in various types of auto-scaling and traditional environments. Most of the code is implemented in Ruby and use the sensu-plugin framework; some also depend on additional gems or packages(e.g. mysql). Some are shell scripts! All languages are welcome but preference is given towards Ruby.
- </p><br />
-      <a class="btn btn-primary btn-lg" href="/about/" role="button">Learn more &raquo;</a><br />
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>Truly leverage Sensu!</h1>
+                <h3>We have open source plugins, handlers and mutators to maximize the effective use of Sensu.</h3>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 himg">
+                <script type="text/javascript" src="https://asciinema.org/a/14734.js" id="asciicast-14734" async></script>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- </div> -->
+<div class="container mtb">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <h4>About Sensu Plugins</h4>
+            <p>
+                This project contains plugins, handlers, mutators and other code to maximize the effective use of Sensu in various types of auto-scaling and traditional environments. Most of them are implemented in Ruby and use the sensu-plugin gem.
+            </p>
+            <p>
+                <img style="margin: 10px" src="{{ site.baseurl }}/public/img/yelp.jpg"/>
+                <img width="200" style="margin: 10px" src="{{ site.baseurl }}/public/img/tr.png"/>
+            </p>
+
+            <a href="about/" class="btn btn-theme">More Info</a>
+        </div>
+
+        <div class="col-lg-5">
+            <h4>Latest Blog Posts</h4>
+            <div class="hline"></div>
+            {% for post in site.posts limit:6 %}
+            <p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+            {% endfor %}
+        </div>
+
+    </div><! --/row -->
+</div><! --/container -->
+
+<div id="twrap">
+    <div class="container centered">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <i class="fa fa-comment-o"></i>
+                <p>
+                    "DCFT being an financial exchange, we need to meet stringent SLA's, Sensu helped us manage our metrics and keep our performance targets. Deploying Sensu and
+                    various plugins over our 70+ node large cluster helped us maintain 99.99% uptime and measure API and trading engine latencies."
+                </p>
+                <h4><br/>Mathias Bogaert, VP of Technical Operations, DCFT</h4>
+                <h5>&nbsp;</h5>
+            </div>
+        </div><! --/row -->
+    </div><! --/container -->
+</div><! --/twrap -->

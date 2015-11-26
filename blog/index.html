@@ -3,24 +3,11 @@ layout: page
 title: Blog
 permalink: /blog/
 ---
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+{% for post in site.posts %}
+<a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
+<p>Posted {{ post.date | date: "%b %-d, %Y" }}{% if post.author %} by {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
+<p><a href="{{ post.url | prepend: site.baseurl }}">[Read More]</a></p>
+<div class="hline"></div>
+{% endfor %}

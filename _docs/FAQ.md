@@ -1,11 +1,9 @@
 ---
-layout: documentation
+layout: page
 # permalink:
-title: Sensu Plugins FAQ
+title: Plugins FAQ
 doc_cat:
-  - Overview
-tags:
-  - no_menu
+  - User
 ---
 **Why did you split the repos**
 
@@ -74,7 +72,6 @@ Details are in .rubocop.yml within the root of each repo and in the [developer g
 **What do you use for testing**
 
 RSpec
-
 
 [1]: https://github.com/sensu-plugins/sensu-plugins-disk-checks
 [2]: http://sensu-plugins.io/docs/developer_guidelines.html

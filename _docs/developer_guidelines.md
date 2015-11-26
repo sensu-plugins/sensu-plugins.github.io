@@ -1,11 +1,8 @@
 ---
-layout: documentation
-# permalink:
+layout: page
 title: Development Guidleines
 doc_cat:
   - Development
-tags:
-  - no_menu
 ---
 
 # Sensu-Plugin Developer Guidelines

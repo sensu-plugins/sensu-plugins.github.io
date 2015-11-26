@@ -1,11 +1,9 @@
 ---
-layout: documentation
+layout: page
 # permalink:
 title: Testing
 doc_cat:
   - Development
-tags:
-  - no_menu
 ---
 
 ## Testing
