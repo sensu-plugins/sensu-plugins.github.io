@@ -432,12 +432,11 @@ csmall2 {
 .plugincontainer .mix {
     text-align: left;
     background: #03899c;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     display: none;
 }
 
 .plugincontainer .mix:after {
-    content: attr(data-myorder);
     color: white;
     font-size: 16px;
     display: inline-block;
