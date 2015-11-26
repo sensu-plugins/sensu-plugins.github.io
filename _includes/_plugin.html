@@ -4,7 +4,7 @@
     {% for repository in site.github.public_repositories %}
         {% if site.exclude_repos contains repository.name %}
         {% else %}
-            <div class="mix {{ site.github.releases.repository.tag_name }}" data-name="{{ repository.name }}">
+            <div class="mix {{ site.github.releases.repository.tag_name }}" data-name="{{ repository.name }}" data-stars="{{ repository.stargazers_count}}" data-watchers="{{ repository.watchers_count }}" data-openissues="{{ repository.open_issues_count }}" data-size="{{ repository.size }}">
                 <p>
                 <h3><a href="{{ repository.html_url }}">{{ repository.name }}</a></h3>
                 <h5>{{ repository.description }}</h5>
