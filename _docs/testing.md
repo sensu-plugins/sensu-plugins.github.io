@@ -5,8 +5,6 @@ doc_cat:
   - Development
 ---
 
-## Testing
-
 ### Linting
 
 **Only pull requests passing Rubocop will be merged.**
