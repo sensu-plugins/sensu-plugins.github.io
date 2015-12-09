@@ -4,11 +4,13 @@ title: About
 permalink: /about/
 ---
 This project contains plugins, handlers, mutators and other code to maximize the effective use of [Sensu](https://sensuapp.org/) in various types of auto-scaling and traditional environments. 
-Most of the plugins are implemented in Ruby and use the `sensu-plugin` framework; some also depend on additional gems (e.g. `mysql`). Some are shell scripts.
+Most of the plugins are implemented in [Ruby](https://www.ruby-lang.org/en/) and use the `sensu-plugin` framework; some also depend on additional gems (e.g. `mysql`); some are shell scripts.
 
 ### Production usage
 
-Linters currently run against Ruby 2.0, 2.1, 2.2 and tests are being run against 1.9.3, 2.0, 2.1, 2.2 if they are written. There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby that is installed with Sensu, directions on this can be found in the [Sensu FAQ](http://sensuapp.org/docs/0.12/faq) or below.
+Linters currently run against Ruby 2.0, 2.1, 2.2 and tests are being run against 1.9.3, 2.0, 2.1, 2.2 if they are written. 
+There are no plans to support prior versions of Ruby, if you have no access to these versions please use the embedded Ruby 
+that is installed with Sensu, directions on this can be found in the [Sensu FAQ](http://sensuapp.org/docs/0.12/faq) or below.
 
 Gems will be built against all current versions of Ruby and one EOL Ruby, currently 1.9.3, will be actively supported.
 
