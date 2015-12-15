@@ -1,9 +1,15 @@
 ---
-layout: page
+layout: documentation
+# permalink:
 title: Installation Instructions
 doc_cat:
   - User
+tags:
+  - no_menu
 ---
+
+
+## Installation
 
 ### Gems
 

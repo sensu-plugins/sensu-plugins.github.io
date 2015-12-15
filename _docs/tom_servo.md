@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: documentation
 # permalink:
 title: Deployment Tools
 doc_cat:
   - Development
+tags:
+  - no_menu
 ---
 
 

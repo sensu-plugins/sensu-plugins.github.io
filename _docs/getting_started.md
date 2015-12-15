@@ -1,8 +1,11 @@
 ---
-layout: page
+layout: documentation
+# permalink:
 title: Getting Started
 doc_cat:
   - Development
+tags:
+  - no_menu
 ---
 
 **Table of Contents**
@@ -75,4 +78,6 @@ A commiter who has push access to any repos. They can either be a member of a te
 
 **contributor**
 
-A Github user who has had one or more merges committed to any repo but does not yet have push access to a team.
+A Github user who has had one or more merges commited to any repo but does not yet have push access to a team.
+
+
