@@ -34,6 +34,7 @@ Add *sensu-plugins-disk-checks* to your Gemfile and run `bundle install` or `bun
 #### Chef
 
 Using the Sensu **sensu_gem** LWRP
+
 ```
 sensu_gem 'sensu-plugins-disk-checks' do
   version '0.0.1'
@@ -41,10 +42,28 @@ end
 ```
 
 Using the Chef **package** resource
+
 ```
 gem_package 'sensu-plugins-disk-checks' do
   version '0.0.1'
 end
+```
+
+#### Puppet
+
+Using the Puppet **sensu_gem** package provider
+
+```
+package { 'sensu-plugins-disk-checks':
+  ensure   => '0.0.1',
+  provider => sensu_gem,
+}
+```
+
+#### Ansible
+
+```
+- gem: name=sensu-plugins-disk-checks version=0.0.1 state=present executable=/opt/sensu/embedded/bin/gem
 ```
 
 ## Usage
