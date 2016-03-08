@@ -10,7 +10,7 @@ license: > # this means to ignore newlines until "baseurl:"
   Copyright &copy; 2015-2016 Sensu-Plugins and contributors.
 
 baseurl: ''
-url: 'http://sensu-plugins.github.io'
+url: 'http://sensu-plugins.io'
 
 
 # Build settings
