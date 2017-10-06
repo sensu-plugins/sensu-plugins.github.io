@@ -8,78 +8,17 @@ tag: full_width
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>Fully leverage Sensu!</h1>
-                <h3>We have open source plugins, handlers and mutators to maximize the effective use of <a href="http://sensuapp.org" style="color: white; text-decoration: underline;">Sensu</a>.</h3>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2">
-                <h5>Popular plugins:
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-cpu-checks" style="color: white; text-decoration: underline;">CPU</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-memory-checks" style="color: white; text-decoration: underline;">Memory</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-disk-checks" style="color: white; text-decoration: underline;">Disk</a>, and
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-network-checks" style="color: white; text-decoration: underline;">Network</a> checks,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-load-checks" style="color: white; text-decoration: underline;">system load</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-hardware" style="color: white; text-decoration: underline;">hardware checks</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-redis" style="color: white; text-decoration: underline;">Redis</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-elasticsearch" style="color: white; text-decoration: underline;">ElasticSearch</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-mysql" style="color: white; text-decoration: underline;">MySQL</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-mesos" style="color: white; text-decoration: underline;">Mesos</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-mailer" style="color: white; text-decoration: underline;">a mailer</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-pagerduty" style="color: white; text-decoration: underline;">PagerDuty</a> integration, metric export to
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-graphite" style="color: white; text-decoration: underline;">Graphite</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-aws" style="color: white; text-decoration: underline;">AWS</a>,
-                    <a href="https://github.com/sensu-plugins/sensu-plugins-http" style="color: white; text-decoration: underline;">HTTP requests</a> and many more...
-                    <br>
-                    <br>
-                </h5>
+                <h1>Sensu Plugins site is merging into Sensu!</h1>
+                <h3>This documentation is in the process of merging into <a href="http://sensuapp.org" style="color: white; text-decoration: underline;">Sensu Documentation</a>. Follow our progress <a href="https://github.com/sensu-plugins/community/issues/58" style="color: white; text-decoration: underline;">here</a>.</h3>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container mtb">
-    <div class="row">
-        <div class="col-lg-4">
             <h4>About Sensu Plugins</h4>
             <div class="hline"></div>
             <p>
-                This project contains plugins, handlers, mutators and other code to maximize the effective use of Sensu in various types of auto-scaling and traditional environments. Most of them are implemented in Ruby and use the sensu-plugin gem.
+                The <a href="https://github.com/sensu-plugins/">Sensu Plugins Project</a> contains plugins, handlers, mutators and other code to maximize the effective use of Sensu in various types of auto-scaling and traditional environments. Sensu itself is agnostic to the language of the code it executes, though most are implemented in Ruby and use the <a href="https://github.com/sensu-plugins/sensu-plugin">sensu-plugin gem</a> while some others are written in Python using <a href="https://github.com/sensu-plugins/sensu-plugin-python">sensu-plugin-python</a>. Anyone and everyone working to make monitoring simple and code reusable are welcome in our community.
             </p>
-            <p>
-                <img style="margin: 10px" src="{{ site.baseurl }}/public/img/yelp.jpg"/>
-                <img width="200" style="margin: 10px" src="{{ site.baseurl }}/public/img/tr.png"/>
-            </p>
-
-            <a href="about/" class="btn btn-theme">More Info</a>
-        </div>
-
-        <div class="col-lg-4">
-            <h4>Latest Blog Posts</h4>
-            <div class="hline"></div>
-            {% for post in site.posts limit:6 %}
-            <p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
-            {% endfor %}
-        </div>
-
-        <div class="col-lg-4">
-            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/sensu" data-widget-id="669799643618914305">Tweets by @sensu</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-
-    </div>
-</div>
-
-<div id="twrap">
-    <div class="container centered">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <i class="fa fa-quote-right"></i>
-                <p>
-                    "With DCFT being a financial exchange, we need to meet stringent SLA's. Sensu helps us manage our infrastructure and monitor our performance targets. Deploying Sensu and
-                    various plugins over our 70+ node large cluster helps us maintain 99.99% uptime and measure API and trading engine latencies."
-                </p>
-                <h5><strong>Mathias Bogaert, VP of Technical Operations, DCFT</strong></h5>
-                <h5>&nbsp;</h5>
-            </div>
-        </div>
-    </div>
 </div>
