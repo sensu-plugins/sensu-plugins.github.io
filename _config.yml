@@ -35,4 +35,3 @@ collections:
   docs:
     output: true
 
-exclude_repos: ["community", "tools", "sensu-plugins-feature-requests", "GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io", "mulder", "scully" ]
