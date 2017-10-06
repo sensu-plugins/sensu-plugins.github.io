@@ -1,13 +1,13 @@
 # Site settings
 title: Sensu Plugins
 
-support_email: support@sensuapp.org
-irc: irc.freenode#sensu
+support_email: community@sensu.io
+slack: slack.sensu-plugins.io
 
 description: > # this means to ignore newlines until "baseurl:"
   The home for all Sensu Community plugins, handlers, and mutators. Open Source under MIT License.
 license: > # this means to ignore newlines until "baseurl:"
-  Copyright &copy; 2015-2016 Sensu-Plugins and contributors.
+  Copyright &copy; 2015-2017 Sensu-Plugins and contributors.
 
 baseurl: ''
 url: 'http://sensu-plugins.io'
@@ -35,4 +35,4 @@ collections:
   docs:
     output: true
 
-exclude_repos: ["sensu-plugins-feature-requests", "GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io", "mulder", "scully" ]
+exclude_repos: ["community", "tools", "sensu-plugins-feature-requests", "GIR", "Kryten", "documentation", "sensu-plugin", "sensu-plugin-spec", "tom_servo", "sensu-plugins.github.io", "mulder", "scully" ]

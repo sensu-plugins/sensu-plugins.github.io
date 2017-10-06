@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: page
 # permalink:
 title: Sensu Plugins Overview
 doc_cat:

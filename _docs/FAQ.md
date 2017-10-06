@@ -30,7 +30,7 @@ Tests are coming, that is one of the core requirements for stability and product
 
 ### How do I use this handler, deploy this check?
 
-The readme will contain sample configs and commands.  Many of the plugins also have a header that contains specific details.  If this is lacking ask in IRC or on the mailing list and someone will be able to assist you.
+The readme will contain sample configs and commands.  Many of the plugins also have a header that contains specific details.  If this is lacking ask in Slack or on the mailing list and someone will be able to assist you.
 
 ### Will the community-plugins repo be deleted and if so when?
 
